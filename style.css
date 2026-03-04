@@ -174,3 +174,34 @@ footer {
     border-top: 1px solid #eee;
     font-size: 14px;
 }
+
+/* =========================================
+   GIAO DIỆN TRANG THÔNG TIN (DETAILS PAGE) & POPUP
+   ========================================= */
+
+.details-container { 
+    display: flex; gap: 40px; max-width: 900px; margin: 50px auto; 
+    background: white; padding: 30px; border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+}
+
+.poster-big { width: 300px; border-radius: 15px; object-fit: cover; aspect-ratio: 2/3; }
+.info-box h1 { color: #ff85a2; font-size: 36px; margin-top: 0; }
+.tag { background: #ffe4e1; color: #ff5277; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 14px; }
+.description { color: #555; line-height: 1.6; margin: 20px 0; }
+
+/* Cụm nút bấm */
+.btn-group { display: flex; gap: 15px; margin-top: 30px; }
+.btn-watch { background: #ff85a2; color: white; padding: 12px 25px; text-decoration: none; border-radius: 10px; font-weight: bold; transition: 0.2s; }
+.btn-watch:hover { background: #ff5277; transform: translateY(-3px); }
+.btn-trailer { background: #333; color: white; padding: 12px 25px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+.btn-trailer:hover { background: #000; transform: translateY(-3px); }
+
+/* POPUP TRAILER */
+.modal { 
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; 
+}
+.modal-content { background: #000; padding: 10px; border-radius: 10px; position: relative; width: 800px; max-width: 90%; }
+.modal-content iframe { width: 100%; aspect-ratio: 16/9; border: none; }
+.close-btn { position: absolute; top: -40px; right: 0; color: white; font-size: 30px; cursor: pointer; font-weight: bold; }
