@@ -3,33 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MHEnt Cinema - Star Detective Pretty Cure!</title>
+    <title>MHEnt Cinema ✨ Trạm Giải Trí Màu Nhiệm</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <h1>🎬 MHEnt Cinema</h1>
-        <p>Miyazaki Haruto Entertainment Co., Ltd.</p>
+    <nav class="navbar">
+        <div class="logo">✨ MHEnt Cinema</div>
+        <ul class="nav-links">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#danh-sach-phim">Danh sách Phim</a></li>
+            <li><a href="#">Lịch chiếu</a></li>
+            <li><a href="#">Về chúng tớ</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Chào mừng đến với<br>Vũ trụ MHEnt! 🌟</h1>
+            <p>Nơi lưu giữ những giấc mơ màu nhiệm và các bản vietsub đầy tâm huyết.</p>
+            <a href="#danh-sach-phim" class="btn-primary">Khám phá ngay</a>
+        </div>
     </header>
 
-    <main>
-        <section class="movie-info">
-            <h2>Star Detective Pretty Cure!</h2>
-            <p>Tập 1: Giấc mơ bắt đầu!</p>
-        </section>
+    <main id="danh-sach-phim">
+        <h2 class="section-title">🎀 Các Dự Án Nổi Bật 🎀</h2>
+        
+        <div class="anime-grid">
+            <div class="anime-card">
+                <div class="card-image bg-blue">
+                    <span>Mới!</span>
+                </div>
+                <div class="card-info">
+                    <h3>Star Detective Pretty Cure!</h3>
+                    <p>Tập 1: Giấc mơ bắt đầu!</p>
+                    <a href="#" class="btn-watch">▶ Xem Ngay</a>
+                </div>
+            </div>
 
-        <div class="video-container">
-            <iframe src="https://ok.ru/videoembed/12502003878503?nochat=1" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+            <div class="anime-card">
+                <div class="card-image bg-pink">
+                    <span>Full</span>
+                </div>
+                <div class="card-info">
+                    <h3>Yume Tsukai Precure!</h3>
+                    <p>Vol. 2: Yume no Mirai</p>
+                    <a href="#" class="btn-watch">▶ Xem Ngay</a>
+                </div>
+            </div>
+
+            <div class="anime-card">
+                <div class="card-image bg-gray">
+                    <span>Sắp ra mắt</span>
+                </div>
+                <div class="card-info">
+                    <h3>Project Kamen Rider</h3>
+                    <p>Đang trong quá trình dịch thuật...</p>
+                    <button class="btn-watch disabled">Đang tải...</button>
+                </div>
+            </div>
         </div>
-
-        <section class="description">
-            <p>Vietsub bởi: Team Subtitle - MHEnt. | Dự án phi lợi nhuận. Vui lòng không re-up.</p>
-        </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Miyazaki Haruto Entertainment Co., Ltd.</p>
+        <p>Made with 💖 by Lam Chi | Miyazaki Haruto Entertainment Co., Ltd.</p>
     </footer>
 
 </body>

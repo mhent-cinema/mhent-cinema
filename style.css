@@ -1,67 +1,183 @@
-/* Thiết lập cơ bản cho toàn bộ trang web */
+/* Thiết lập Font chữ và màu nền tổng thể */
 body {
-    background-color: #121212; /* Màu nền tối chuẩn rạp phim */
-    color: #ffffff; /* Chữ màu trắng */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Nunito', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f8fbff; /* Trắng pha chút xanh lam rất nhạt */
+    color: #333333;
+}
+
+/* --- THANH MENU --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    color: #ff85a2; /* Màu hồng đậm */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555555;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #6bb9f0; /* Chuyển sang xanh dương khi trỏ chuột */
+}
+
+/* --- BANNER CHÀO MỪNG --- */
+.hero {
+    /* Hiệu ứng gradient mờ ảo từ xanh biển sang hồng nhạt */
+    background: linear-gradient(135deg, #e0f7fa 0%, #ffe4e1 100%);
+    padding: 100px 20px;
     text-align: center;
 }
 
-/* Trang trí phần đầu trang */
-header {
-    background-color: #1f1f1f;
-    padding: 20px;
-    border-bottom: 2px solid #e50914; /* Một đường viền đỏ tạo điểm nhấn */
+.hero h1 {
+    font-size: 48px;
+    color: #4a4a4a;
+    margin-bottom: 10px;
 }
 
-header h1 {
-    margin: 0;
-    color: #e50914; /* Màu chữ đỏ phong cách điện ảnh */
+.hero p {
+    font-size: 18px;
+    color: #666666;
+    margin-bottom: 30px;
 }
 
-header p {
-    margin: 5px 0 0 0;
-    font-size: 14px;
-    color: #aaaaaa;
+.btn-primary {
+    background-color: #ff85a2;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 5px 15px rgba(255, 133, 162, 0.4);
+    transition: transform 0.2s;
 }
 
-/* Trang trí phần thông tin phim */
-.movie-info {
-    margin: 20px;
+.btn-primary:hover {
+    transform: scale(1.05); /* Phóng to nhẹ khi trỏ chuột */
 }
 
-.movie-info h2 {
-    color: #ffcc00; /* Tên anime màu vàng nổi bật */
+/* --- DANH SÁCH ANIME --- */
+#danh-sach-phim {
+    padding: 60px 50px;
+    text-align: center;
 }
 
-/* Trang trí khung chứa video cho màn hình co giãn tự nhiên */
-.video-container {
-    max-width: 800px; /* Chiều rộng tối đa của màn hình video */
-    margin: 0 auto; /* Căn giữa màn hình */
-    background-color: #000;
-    border-radius: 8px; /* Bo góc cho mượt */
+.section-title {
+    font-size: 32px;
+    color: #ff85a2;
+    margin-bottom: 40px;
+}
+
+.anime-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Tự động xuống dòng nếu nhiều phim */
+}
+
+/* Thẻ Phim */
+.anime-card {
+    background: white;
+    border-radius: 20px;
+    width: 300px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Đổ bóng */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.video-container iframe {
-    width: 100%;
-    height: 450px;
+.anime-card:hover {
+    transform: translateY(-10px); /* Bay nhẹ lên khi trỏ chuột */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
-/* Trang trí chữ dưới video */
-.description {
-    margin: 20px;
-    color: #cccccc;
-    font-style: italic;
+/* Nơi để ảnh Poster (Tạm thời tô màu nền) */
+.card-image {
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 15px;
 }
 
-/* Trang trí chân trang */
-footer {
-    margin-top: 50px;
-    padding: 10px;
-    background-color: #0a0a0a;
+.card-image span {
+    background: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
     font-size: 12px;
-    color: #555555;
+}
+
+/* Màu placeholder cho Poster */
+.bg-blue { background-color: #aed9e0; } /* Xanh Star Detective */
+.bg-pink { background-color: #ffb7b2; } /* Hồng Yume Tsukai */
+.bg-gray { background-color: #e2e2e2; }
+
+.card-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.card-info h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.card-info p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.btn-watch {
+    display: inline-block;
+    background-color: #6bb9f0; /* Màu xanh nước biển nhạt */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-watch:hover {
+    background-color: #55a8e0;
+}
+
+.disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    border: none;
+}
+
+/* --- CHÂN TRANG --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #ffffff;
+    color: #999999;
+    border-top: 2px dashed #f1f1f1;
 }
