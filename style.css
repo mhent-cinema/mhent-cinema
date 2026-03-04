@@ -183,9 +183,15 @@ footer {
    ========================================= */
 
 .details-container { 
-    display: flex; gap: 40px; max-width: 900px; margin: 50px auto; 
-    background: white; padding: 30px; border-radius: 20px; 
+    display: flex; 
+    gap: 40px; 
+    max-width: 900px; 
+    margin: 50px auto; 
+    background: white; 
+    padding: 30px; 
+    border-radius: 20px; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    align-items: flex-start; /* <--- CỨU TINH CHÍNH LÀ DÒNG NÀY! Ép dính lên nóc! */
 }
 
 .poster-big { 
