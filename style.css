@@ -529,3 +529,55 @@ body.dark-mode .footer-bottom p { color: #aaa; }
 body.dark-mode .footer-dot { color: #555; }
 body.dark-mode .footer-link { color: #ff85a2; }
 body.dark-mode .footer-link:hover { color: #fff; }
+
+/* =========================================
+   📱 MA THUẬT GIAO DIỆN ĐIỆN THOẠI (MOBILE RESPONSIVE)
+   ========================================= */
+
+/* Lệnh này nghĩa là: Bất cứ màn hình nào nhỏ hơn 768px (iPad, iPhone), thì hãy áp dụng các luật sau: */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Ép rạp phim lùi lại, sát lề điện thoại cho đỡ phí diện tích */
+    .watch-container, .about-container, .details-container { 
+        padding: 0 15px; 
+        margin-top: 40px !important; 
+    }
+
+    /* 2. QUAN TRỌNG NHẤT: Bẻ gãy hàng ngang, bắt Video và Danh sách tập xếp chồng lên nhau! */
+    .watch-layout { 
+        flex-direction: column; 
+        gap: 20px;
+    }
+    .video-section, .episode-sidebar { 
+        width: 100%; /* Giãn to hết cỡ bề ngang điện thoại */
+        flex: none; 
+    }
+
+    /* 3. Phần thông tin phim ở dưới cũng bẻ dọc và canh giữa luôn */
+    .info-footer-container, .details-container-small, .details-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    /* 4. Thu nhỏ Poster lại cho vừa màn hình bé */
+    .poster-watch-fix, .poster-medium, .poster-big {
+        width: 150px;
+        margin: 0 auto;
+    }
+
+    /* 5. Cứu rỗi thanh Menu: Giấu chữ đi, chỉ để lại Logo và các link cho đỡ chật */
+    .logo-name { display: none; }
+    .nav-links { gap: 10px; font-size: 12px; }
+    .nav-left img { width: 35px; height: 35px; }
+
+    /* 6. Trang About: Các thẻ dự án xếp dọc luôn */
+    .project-card { width: 100%; }
+    
+    /* 7. Giấu luôn nút Back to Top cho màn hình đt đỡ rối mắt (hoặc thu nhỏ nó lại) */
+    #btn-back-to-top {
+        width: 35px; height: 35px; font-size: 16px;
+        bottom: 15px; right: 15px;
+    }
+}
