@@ -21,6 +21,7 @@ body {
     display: flex;
     align-items: center;
     gap: 15px; 
+    text-decoration: none;
 }
 
 /* AVATAR TRÒN */
@@ -188,10 +189,9 @@ footer {
 }
 
 .poster-big { 
-    width: 300px; 
-    height: 450px; /* Chốt cứng chiều cao cho ngang bằng với phần chữ */
-    object-fit: cover; /* Zoom lên và cắt phần thừa, TUYỆT ĐỐI KHÔNG BÓP MÉO */
-    object-position: top; /* Ưu tiên hiển thị từ phần đầu nhân vật trở xuống */
+    width: 240px; /* Bóp bề ngang nhỏ lại một xíu */
+    height: auto; /* Chiều cao tự động rút ngắn theo */
+    object-fit: contain; /* Hiển thị trọn vẹn 100% ảnh */
     border-radius: 15px; 
     box-shadow: 0 5px 15px rgba(0,0,0,0.15); 
 }
