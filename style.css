@@ -237,9 +237,9 @@ footer {
 
 /* 1. Canh lề chuẩn, đẩy lùi khỏi Navbar */
 .watch-container {
-    max-width: 1100px;
-    margin: 100px auto 50px; /* 100px cách top để né menu, auto để nằm giữa */
-    padding: 0 30px;
+    max-width: 1350px; /* <--- KÉO DÃN Ở ĐÂY CHO MÀN HÌNH TO */
+    margin: 100px auto 50px;
+    padding: 0 40px; /* Thêm tí padding lề để không dính vách màn hình siêu nhỏ */
 }
 
 /* 2. Chia bố cục Video và Sidebar */
