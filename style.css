@@ -581,3 +581,17 @@ body.dark-mode .footer-link:hover { color: #fff; }
         bottom: 15px; right: 15px;
     }
 }
+
+/* 8. ÉP CÂN DANH SÁCH TẬP TRÊN ĐIỆN THOẠI */
+    .ep-grid-v2 {
+        grid-template-columns: repeat(auto-fill, minmax(55px, 1fr)); /* Cho các nút nằm sát nhau hơn */
+        gap: 8px; /* Thu hẹp khoảng cách giữa các nút */
+    }
+    .ep-btn-custom {
+        padding: 8px 4px; /* Làm nút mỏng lại */
+        font-size: 12px;  /* Chữ nhỏ đi một chút xíu */
+    }
+    .episode-sidebar h3 {
+        font-size: 18px; /* Thu nhỏ chữ "Danh sách tập" luôn cho cân đối */
+        margin-bottom: 10px;
+    }
