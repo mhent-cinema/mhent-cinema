@@ -59,20 +59,22 @@
     </div>
 
     <script>
-        var fbTrailerLink = "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fmharuto.entertainment%2Fvideos%2F2007201789911311%2F&show_text=false&width=560&t=0";
+    // 1. Khai báo link trailer gốc ở đây (nhớ để trong ngoặc kép)
+        var linkGoc = "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fmharuto.entertainment%2Fvideos%2F2007201789911311%2F&show_text=false&width=560&t=0";
+    
         var modal = document.getElementById('trailerModal');
-        var iframe = document.getElementById('trailerIframe'); // Lấy cái iframe ra
+        var iframe = document.getElementById('trailerIframe');
 
         function openTrailer() {
             modal.style.display = 'flex';
-            document.getElementById('trailerIframe').src = fbTrailerLink; 
-            iframe.src = fbTrailerLink;
+            // Khi mở: Bơm link gốc vào để video tải và sẵn sàng phát
+            iframe.src = linkGoc; 
         }
 
         function closeTrailer() {
             modal.style.display = 'none';
-            document.getElementById('trailerIframe').src = ""; 
-            iframe.src = iframe.src;
+            // Khi đóng: Xóa sạch link (về trang trắng hoàn toàn) để dừng mọi âm thanh
+            iframe.src = ""; 
         }
 
         // TÍNH NĂNG 1: Bấm phím ESC để đóng
