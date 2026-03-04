@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MHEnt. - Cinema</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/jpeg" href="../assets/icon-web.png">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <p style="margin-top: 15px; font-weight: bold; color: #ff85a2;">MHEnt. - Đang chuẩn bị máy chiếu...</p>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="../index.html">
+                <img src="../assets/avt-web.jpg" alt="Avatar Web" class="avt-img">
+                <span class="logo-name">MHEnt. - Cinema</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Trang chủ</a></li>
+            <li><a href="../index.html#phim-dang-chieu">Danh sách Phim</a></li>
+        </ul>
+    </nav>
+
+    <main class="watch-container">
+        <div class="watch-layout">
+            <div class="video-section">
+                <div class="video-box"> 
+                    <div class="watch-header">
+                        <h2>Kimi to Idol Pretty Cure♪ The Movie - For You! Our KiraKilala Concert!</h2>
+                        <p id="current-episode">Đang tải phim...</p>
+                    </div>
+        
+                    <div class="video-player-wrapper">
+                        <iframe id="main-player" src="" frameborder="0" allowfullscreen></iframe>
+                    </div>
+        
+                    <div class="cinema-tools">
+                        <span style="font-weight: bold; color: #888;">MHEnt. - Hệ thống:</span>
+                        <button id="btn-dark-mode" class="tool-btn" onclick="toggleDarkMode()">💡 Tắt đèn</button>
+                    </div>
+            </div> </div>
+
+            <div class="episode-sidebar">
+                <h3>Danh sách tập</h3>
+                <div id="list-buttons" class="ep-grid-v2">
+                    </div>
+            </div>
+        </div>
+
+        <hr class="separator-full">
+
+        <div class="info-footer-container">
+            <img src="../assets/Eiga_Kimi_to_Idol_Precure_Official_Poster.webp" alt="Poster" class="poster-watch-fix">
+            
+            <div class="info-content-box">
+                <h1 style="margin-top:0; color: #ff85a2;">Kimi to Idol Pretty Cure♪ The Movie - For You! Our KiraKilala Concert!</h1>
+                <p><strong>Bản dịch:</strong> Team Subtitle - MHEnt</p>
+                
+                <div id="desc-container" class="description-scroll">
+                    <p><strong>Mô tả:</strong><br><br>
+                    Một ngày nọ, Uta và những người bạn được nàng tiên san hô Totte mời tham gia "Lễ hội Thần tượng Siêu Kỳ tích" được tổ chức trên một hòn đảo bí ẩn tên là đảo AiAi!<br><br>
+                    Trong một không gian khổng lồ, rất nhiều thần tượng khác nhau, bao gồm cả robot và động vật, cùng tụ họp♪<br><br>
+                    Lễ hội thần tượng lớn nhất vũ trụ sắp bắt đầu! Hay ít nhất họ đã nghĩ vậy...?<br><br>
+                    Đột nhiên, một con quái vật bí ẩn xuất hiện, và đảo AiAi cùng cả thế giới bị cuốn vào một cuộc khủng hoảng...<br><br>
+                    Và hơn thế nữa, họ đã bị đưa trở về quá khứ!?<br><br>
+                    Manh mối để cứu họ khỏi cuộc khủng hoảng này được giấu kín trong truyền thuyết về nữ thần của hòn đảo và cô gái bí ẩn căm ghét thần tượng Terra, người mà họ đã gặp trên đảo...?<br><br>
+                    Chưa hết! "Wonderful Pretty Cure!" và "Hirogaru Sky! Pretty Cure" cũng sẽ đổ bộ đến đảo AiAi!<br><br>
+                    Nào! Hãy hát, nhảy và làm hài lòng khán giả - một buổi hòa nhạc kirakiLive sắp bắt đầu!☆
+                    </p>
+                </div>
+                <button id="btn-toggle" class="btn-read-more" onclick="toggleDescription()">... Xem thêm</button>
+            </div>
+        </div>
+    </main>
+
+    <button id="btn-back-to-top" title="Lên đầu trang">⬆</button>
+
+    <footer>
+        <p>©2026 Miyazaki Haruto Entertainment Co., Ltd.</p>
+    </footer>
+    <script>
+        // 1. Danh sách phim của cậu
+        const dsTapPhim = [
+            { link: 'https://ok.ru/videoembed/12502003878503?nochat=1', title: 'Tập Full: Kimi to Idol Pretty Cure♪ The Movie - For You! Our KiraKilala Concert!' },
+        ];
+
+        const movieName = "Kimi to Idol Pretty Cure♪ The Movie - For You! Our KiraKilala Concert!";
+        const player = document.getElementById('main-player');
+        const epTitle = document.getElementById('current-episode');
+        const overlay = document.getElementById('loading-overlay');
+
+        function renderButtons() {
+            const btnContainer = document.getElementById('list-buttons');
+            btnContainer.innerHTML = ''; // Xóa sạch khoảng trắng thừa
+            
+            dsTapPhim.forEach((tap, index) => {
+                let btn = document.createElement('button');
+                btn.className = 'ep-btn-custom';
+                btn.innerText = `Tập Full`;
+                
+                // Sửa lại cách gọi hàm để không bao giờ bị trượt nút
+                btn.onclick = () => playVideo(index);
+                btnContainer.appendChild(btn);
+            });
+        }
+
+        function playVideo(index) {
+            overlay.style.display = 'flex'; // Bật màn hình chờ
+            
+            setTimeout(() => {
+                player.src = dsTapPhim[index].link;
+                epTitle.innerText = dsTapPhim[index].title;
+                document.title = `Đang xem Tập Full - ${movieName} - MHEnt. Cinema`;
+                
+                // Tẩy màu nút cũ và tô hồng nút mới (Cách này an toàn 100%)
+                const allBtns = document.querySelectorAll('.ep-btn-custom');
+                allBtns.forEach(b => b.classList.remove('active'));
+                if (allBtns[index]) allBtns[index].classList.add('active');
+                
+                overlay.style.display = 'none'; // Tắt màn hình chờ
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 1500); 
+        }
+
+        function toggleDescription() {
+            const container = document.getElementById('desc-container');
+            const btn = document.getElementById('btn-toggle');
+            if (container.classList.contains('expanded')) {
+                container.classList.remove('expanded');
+                btn.innerText = "... Xem thêm";
+            } else {
+                container.classList.add('expanded');
+                btn.innerText = "Thu gọn";
+            }
+        }
+
+        function toggleDarkMode() { document.body.classList.toggle('dark-mode'); }
+
+        // Khởi động
+        renderButtons();
+        playVideo(0); // Gọi trực tiếp tập 0 (Tập 1) cực an toàn
+
+        function toggleDarkMode() { 
+            // Tắt / Bật giao diện tối
+            document.body.classList.toggle('dark-mode'); 
+            
+            // Tìm cái nút
+            const btnDarkMode = document.getElementById('btn-dark-mode');
+            
+            // Kiểm tra: Nếu web đang màu đen thì đổi chữ thành "Bật đèn" và ngược lại
+            if (document.body.classList.contains('dark-mode')) {
+                btnDarkMode.innerText = "💡 Bật đèn";
+            } else {
+                btnDarkMode.innerText = "💡 Tắt đèn";
+            }
+        }
+
+        // Tính năng Back to Top (Phiên bản chống lỗi)
+        const backToTopBtn = document.getElementById("btn-back-to-top");
+
+        if (backToTopBtn) { // Kiểm tra xem nút có tồn tại trên trang không
+            window.addEventListener("scroll", () => {
+                // Dùng cả 2 cách đo thanh cuộn cho chắc ăn
+                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                    backToTopBtn.style.display = "block";
+                } else {
+                    backToTopBtn.style.display = "none";
+                }
+            });
+
+            backToTopBtn.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        }
+    </script>
+</body>
+</html>
