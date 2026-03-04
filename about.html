@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Về chúng tớ - MHEnt. Cinema</title>
+    <link rel="icon" type="image/jpeg" href="assets/avt-web.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html">
+                <img src="assets/avt-web.jpg" alt="Avatar Web" class="avt-img">
+                <span class="logo-name">MHEnt. - Cinema</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="index.html#phim-dang-chieu">Danh sách Phim</a></li>
+            <li><a href="about.html" class="active-nav">Về chúng tớ</a></li>
+        </ul>
+    </nav>
+
+    <main class="about-container">
+        
+        <section class="about-header">
+            <img src="assets/avt-web.jpg" alt="MHEnt Logo" class="about-logo">
+            <h1>Miyazaki Haruto Entertainment Co., Ltd.</h1>
+            <p class="about-subtitle">Dự án Fan-sub phi lợi nhuận</p>
+            <div class="about-desc">
+                <p>Chào mừng bạn đến với MHEnt. Cinema! Chúng tớ là một nhóm nhỏ đam mê văn hóa 2D, đặc biệt là vũ trụ Pretty Cure. Với mong muốn mang những bộ phim tuyệt vời này đến gần hơn với khán giả Việt Nam, MHEnt. được thành lập để thực hiện các bản vietsub chất lượng, hoàn toàn phi lợi nhuận.</p>
+            </div>
+        </section>
+
+        <section class="about-projects">
+            <h2>🎬 Các dự án nổi bật</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3 style="color: #ff85a2;">Star Detective Pretty Cure!</h3>
+                    <p>Series dài tập - Đang tiến hành</p>
+                </div>
+                <div class="project-card">
+                    <h3 style="color: #ff85a2;">Eiga Kimi to Idol Pretty Cure♪</h3>
+                    <p>Movie - Đã hoàn thành / Đang tiến hành</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-social">
+            <h2>🌐 Mạng lưới kết nối</h2>
+            <p>Theo dõi và ủng hộ chúng tớ tại các nền tảng chính thức nhé!</p>
+            <div class="social-buttons">
+                <a href="LINK_FACEBOOK_PAGE" target="_blank" class="btn-social fb-page">🔗 Fanpage Chính Thức</a>
+                <a href="LINK_FACEBOOK_CINEMA" target="_blank" class="btn-social fb-cinema">🍿 Rạp Phim Trên Facebook</a>
+            </div>
+        </section>
+
+    </main>
+
+    <button id="btn-back-to-top" title="Lên đầu trang">⬆</button>
+
+    <footer>
+        <p>©2026 Miyazaki Haruto Entertainment Co., Ltd.</p>
+    </footer>
+
+    <script>
+        const backToTopBtn = document.getElementById("btn-back-to-top");
+        if (backToTopBtn) {
+            window.addEventListener("scroll", () => {
+                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                    backToTopBtn.style.display = "block";
+                } else {
+                    backToTopBtn.style.display = "none";
+                }
+            });
+            backToTopBtn.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        }
+    </script>
+</body>
+</html>
