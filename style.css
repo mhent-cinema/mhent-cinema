@@ -530,6 +530,37 @@ body.dark-mode .footer-dot { color: #555; }
 body.dark-mode .footer-link { color: #ff85a2; }
 body.dark-mode .footer-link:hover { color: #fff; }
 
+.back-btn-wrapper {
+    max-width: 1000px;
+    margin: 110px auto -30px; /* Đẩy lùi Navbar 110px, kéo khung mô tả sát lên 30px */
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.btn-back {
+    display: inline-block;
+    text-decoration: none;
+    color: #ff85a2;
+    font-weight: 900;
+    font-size: 14px;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background: #ff85a2;
+    color: #fff;
+    transform: translateX(-5px); /* Hiệu ứng lùi về bên trái cực mượt */
+}
+
+/* Chế độ Tắt đèn cho nút Back */
+body.dark-mode .btn-back { background: #2a2a2a; color: #ff85a2; }
+body.dark-mode .btn-back:hover { background: #ff85a2; color: #fff; }
+
 /* =========================================
    📱 MA THUẬT GIAO DIỆN ĐIỆN THOẠI (MOBILE RESPONSIVE)
    ========================================= */
