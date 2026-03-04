@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MHEnt. - Cinema</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/jpeg" href="../assets/icon-web.png">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -75,6 +76,8 @@
         </div>
     </main>
 
+    <button id="btn-back-to-top" title="Lên đầu trang">⬆</button>
+
     <footer>
         <p>©2026 Miyazaki Haruto Entertainment Co., Ltd.</p>
     </footer>
@@ -140,6 +143,17 @@
         // Khởi động
         renderButtons();
         playVideo(0); // Gọi trực tiếp tập 0 (Tập 1) cực an toàn
+
+        // Tính năng Back to Top
+        const backToTopBtn = document.getElementById("btn-back-to-top");
+        window.addEventListener("scroll", () => {
+            // Nếu kéo xuống quá 300px thì hiện nút, ngược lại thì giấu
+            if (window.scrollY > 300) backToTopBtn.style.display = "block";
+            else backToTopBtn.style.display = "none";
+        });
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" }); // Cuộn mượt mà lên đỉnh
+        });
     </script>
 </body>
 </html>

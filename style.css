@@ -19,6 +19,14 @@ body {
     background-color: #ffffff;
     padding: 10px 40px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: fixed;  /* Ghim chặt nó lại */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;    /* Đảm bảo nó luôn nổi lên trên cùng, không bị video đè */
+    background: #fff; /* Nền trắng để không bị chữ ở dưới xuyên thấu */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08); /* Thêm tí bóng đổ cho tách biệt */
+    box-sizing: border-box; /* Ép nó không bị tràn viền */
 }
 
 .nav-left {
@@ -188,6 +196,29 @@ footer {
     font-size: 14px;
 }
 
+/* NÚT LÊN ĐẦU TRANG */
+#btn-back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none; /* Ẩn mặc định */
+    background-color: #ff85a2;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255,133,162,0.4);
+    z-index: 1000;
+    transition: 0.3s;
+}
+#btn-back-to-top:hover {
+    background-color: #ff5c8a;
+    transform: translateY(-5px); /* Hiệu ứng nảy lên khi đưa chuột vào */
+}
+
 /* =========================================
    GIAO DIỆN TRANG THÔNG TIN (DETAILS PAGE) & POPUP
    ========================================= */
@@ -342,3 +373,37 @@ body.dark-mode .ep-btn-custom { background: #333; color: #bbb; }
 body.dark-mode .ep-btn-custom:hover { background: #444; color: #ff85a2; }
 body.dark-mode .ep-btn-custom.active { background: #ff85a2; color: #fff; }
 body.dark-mode .separator-full { border-color: #333; }
+body.dark-mode .video-box { /* <--- THÊM CÁI NÀY */
+    background-color: #2a2a2a; 
+    color: #ffffff;
+}
+
+/*9. Chỉnh lại màu Text */
+/* Nâng cấp Font chữ Tên phim */
+.watch-header h2 {
+    font-size: 30px;
+    color: #ff85a2; 
+    text-shadow: 1px 1px 2px rgba(255, 133, 162, 0.2);
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+/* Nâng cấp Tên tập (Làm thành dạng khung Tag) */
+#current-episode {
+    font-size: 16px;
+    color: #ff5c8a;
+    font-weight: 800;
+    background: #fff0f3; /* Nền hồng pastel siêu nhạt */
+    display: inline-block; /* Ôm sát chữ */
+    padding: 6px 15px;
+    border-radius: 20px;
+    border: 1px solid #ffb6c1;
+    margin-top: 0;
+}
+
+/* Chế độ Tắt đèn cho Tên tập */
+body.dark-mode #current-episode {
+    background: #333;
+    color: #ff85a2;
+    border-color: #ff85a2;
+}
