@@ -127,7 +127,7 @@
             dsTapPhim.forEach((tap, index) => {
                 let btn = document.createElement('button');
                 btn.className = 'ep-btn-custom';
-                btn.innerText = `Tập ${index + 1}`;
+                btn.innerText = `Tập Full`;
                 btn.onclick = () => playVideo(index);
                 btnContainer.appendChild(btn);
             });
@@ -144,7 +144,7 @@
             setTimeout(() => {
                 player.src = dsTapPhim[index][currentServerType]; 
                 epTitle.innerText = dsTapPhim[index].title;
-                document.title = `Đang xem Tập ${index + 1} - ${movieName} - MHEnt. Cinema`;
+                document.title = `Đang xem Tập Full - ${movieName} - MHEnt. Cinema`;
                 
                 const allBtns = document.querySelectorAll('.ep-btn-custom');
                 allBtns.forEach(b => b.classList.remove('active'));
