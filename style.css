@@ -44,10 +44,11 @@ body {
     gap: 30px;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: #555;
-    font-weight: 700;
+.nav-left a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none; /* Xóa gạch chân của link */
 }
 
 .nav-links a:hover {
@@ -185,7 +186,12 @@ footer {
     box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
 }
 
-.poster-big { width: 300px; border-radius: 15px; object-fit: cover; aspect-ratio: 2 / 3; }
+.poster-big { 
+    width: 300px; 
+    height: auto; /* Cho phép ảnh hiển thị đúng tỷ lệ gốc, không bóp méo */
+    border-radius: 15px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Thêm bóng đổ cho ngầu */
+}
 .info-box h1 { color: #ff85a2; font-size: 36px; margin-top: 0; }
 .tag { background: #ffe4e1; color: #ff5277; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 14px; }
 .description { color: #555; line-height: 1.6; margin: 20px 0; }
@@ -205,19 +211,3 @@ footer {
 .modal-content { background: #000; padding: 10px; border-radius: 10px; position: relative; width: 800px; max-width: 90%; }
 .modal-content iframe { width: 100%; aspect-ratio: 16/9; border: none; }
 .close-btn { position: absolute; top: -40px; right: 0; color: white; font-size: 30px; cursor: pointer; font-weight: bold; }
-
-/* --- SỬA LỖI LOGO BỊ LỆCH KHI BỌC THỂ LINK --- */
-.nav-left a {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    text-decoration: none; /* Xóa gạch chân của link */
-}
-
-/* --- SỬA LỖI POSTER BỊ BÓP MÉO --- */
-.poster-big { 
-    width: 300px; 
-    height: auto; /* Cho phép ảnh hiển thị đúng tỷ lệ gốc, không bóp méo */
-    border-radius: 15px; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Thêm bóng đổ cho ngầu */
-}
