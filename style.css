@@ -262,30 +262,11 @@ footer {
 }
 
 /* --- NÚT TẬP PHIM SIÊU ĐẸP (VẺ ĐẸP CŨ) --- */
-.ep-grid-v2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-    gap: 12px;
-    margin-top: 20px;
-}
 
-.ep-btn-custom {
-    padding: 10px;
-    border: none;
-    background: #f0f0f0;
-    color: #555;
-    border-radius: 12px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.ep-btn-custom:hover { background: #ffe0e9; color: #ff85a2; }
-.ep-btn-custom.active {
-    background: #ff85a2; /* Màu hồng xịn xò của cậu đây! */
-    color: white;
-    box-shadow: 0 5px 15px rgba(255, 133, 162, 0.4);
-}
+/* Danh sách tập dạng lưới vuông nhỏ */
+.ep-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); gap: 10px; margin-top: 15px; }
+.ep-btn-small { width: 40px; height: 40px; border: 1px solid #ddd; background: #fff; border-radius: 8px; cursor: pointer; font-weight: bold; }
+.ep-btn-small.active { background: #ff85a2; color: #fff; border-color: #ff85a2; }
 
 /* --- FIX TỈ LỆ POSTER Ở DƯỚI --- */
 /* --- KHUNG THÔNG TIN NHỎ LẠI & CANH TRÁI --- */
