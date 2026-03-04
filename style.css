@@ -581,17 +581,23 @@ body.dark-mode .footer-link:hover { color: #fff; }
         bottom: 15px; right: 15px;
     }
 
-    /* 8. ÉP CÂN DANH SÁCH TẬP TRÊN ĐIỆN THOẠI */
+    /* 8. ÉP CÂN TOÀN DIỆN KHỐI DANH SÁCH TẬP */
+    .episode-sidebar {
+        padding: 12px 15px; /* Rút gọn lớp đệm của cái hộp trắng xung quanh */
+        border-radius: 12px; /* Bo góc nhỏ lại cho đỡ cồng kềnh */
+    }
+    .episode-sidebar h3 {
+        font-size: 16px; /* Thu nhỏ tiêu đề */
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
     .ep-grid-v2 {
-        grid-template-columns: repeat(auto-fill, minmax(55px, 1fr)); /* Cho các nút nằm sát nhau hơn */
+        grid-template-columns: repeat(auto-fill, minmax(45px, 1fr)); /* Cho nút gọn lại nữa */
         gap: 8px; /* Thu hẹp khoảng cách giữa các nút */
     }
     .ep-btn-custom {
-        padding: 8px 4px; /* Làm nút mỏng lại */
-        font-size: 12px;  /* Chữ nhỏ đi một chút xíu */
-    }
-    .episode-sidebar h3 {
-        font-size: 18px; /* Thu nhỏ chữ "Danh sách tập" luôn cho cân đối */
-        margin-bottom: 10px;
+        padding: 6px 2px; /* Bóp mỏng cái nút lại */
+        font-size: 11px;  /* Chữ nhỏ xíu xiu vừa mắt điện thoại */
+        border-radius: 6px;
     }
 }
