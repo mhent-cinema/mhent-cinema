@@ -50,8 +50,8 @@
                         
                         <div class="server-list-mini">
                             <span class="server-label">Nguồn phát:</span>
-                            <button id="btn-server-vip" class="server-btn-mini" onclick="changeServer('linkVIP')">✨ VIP (Nhanh)</button>
-                            <button id="btn-server-dp" class="server-btn-mini active" onclick="changeServer('linkDuPhong')">🛡️ Archive (Dự phòng)</button>
+                            <button id="btn-server-vip" class="server-btn-mini active" onclick="changeServer('linkVIP')">✨ VIP (Nhanh)</button>
+                            <button id="btn-server-dp" class="server-btn-mini" onclick="changeServer('linkDuPhong')">🛡️ Archive (Dự phòng)</button>
                         </div>
                     </div>
                 </div> 
@@ -137,7 +137,7 @@
         const overlay = document.getElementById('loading-overlay');
         
         let currentEpIndex = 0;
-        let currentServerType = 'linkVIP'; // Đang để mặc định là OK.ru
+        let currentServerType = 'linkVIP'; //Default là server VIP
 
         function renderButtons() {
             const btnContainer = document.getElementById('list-buttons');
@@ -156,7 +156,7 @@
             currentEpIndex = index;
             
             // LƯU TRÍ NHỚ: Ghi lại tập đang xem vào bộ nhớ của trình duyệt
-            localStorage.setItem('mhent_star_detective_last_ep', index);
+            localStorage.setItem('mhent_meitantei_precure_last_ep', index);
 
             overlay.style.display = 'flex'; 
             
