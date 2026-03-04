@@ -41,24 +41,33 @@
                     <div class="video-player-wrapper">
                         <iframe id="main-player" src="" frameborder="0" allowfullscreen></iframe>
                     </div>
-        
+
                     <div class="cinema-tools">
-                        <span style="font-weight: bold; color: #888;">MHEnt. - Hệ thống:</span>
-                        <button id="btn-dark-mode" class="tool-btn" onclick="toggleDarkMode()">💡 Tắt đèn</button>
+                        <div class="tools-top">
+                            <span style="font-weight: bold; color: #888;">MHEnt. - Hệ thống:</span>
+                            <button id="btn-dark-mode" class="tool-btn" onclick="toggleDarkMode()">💡 Tắt đèn</button>
+                        </div>
+                        
+                        <div class="server-list-mini">
+                            <span class="server-label">Nguồn phát:</span>
+                            <button id="btn-server-vip" class="server-btn-mini active" onclick="changeServer('linkVIP')">✨ VIP (Nhanh)</button>
+                            <button id="btn-server-dp" class="server-btn-mini" onclick="changeServer('linkDuPhong')">🛡️ Archive (Dự phòng)</button>
+                        </div>
                     </div>
-            </div> </div>
+                </div> 
+            </div>
 
             <div class="episode-sidebar">
                 <h3>Danh sách tập</h3>
                 <div id="list-buttons" class="ep-grid-v2">
-                    </div>
+                </div>
             </div>
         </div>
 
         <hr class="separator-full">
 
         <div class="info-footer-container">
-            <img src="../assets/Eiga_Kimi_to_Idol_Precure_Official_Poster.webp" alt="Poster" class="poster-watch-fix">
+            <img src="../assets/Meitantei_Precure_Official_Poster.webp" alt="Poster" class="poster-watch-fix">
             
             <div class="info-content-box">
                 <h1 style="margin-top:0; color: #ff85a2;">Kimi to Idol Pretty Cure♪ The Movie - For You! Our KiraKilala Concert!</h1>
@@ -95,47 +104,74 @@
     </footer>
 
     <script>
-        // 1. Danh sách phim của cậu
         const dsTapPhim = [
-            { link: 'https://ok.ru/videoembed/12502003878503?nochat=1', title: 'Tập Full: Kimi to Idol Pretty Cure♪ The Movie - For You! Our KiraKilala Concert!' },
+            { 
+                title: 'Tập Full: Kimi to Idol Pretty Cure♪ The Movie - For You! Our KiraKilala Concert!',
+                linkVIP: 'https://drive.google.com/file/d/1WEXnphHSLvnZk3Wf_t4L7zQOmtwbak1S/preview', 
+                linkDuPhong: 'https://archive.org/embed/sdpc-ep1' 
+            },
         ];
 
-        const movieName = "Kimi to Idol Pretty Cure♪ The Movie - For You! Our KiraKilala Concert!";
+        const movieName = "Star Detective Pretty Cure!";
         const player = document.getElementById('main-player');
         const epTitle = document.getElementById('current-episode');
         const overlay = document.getElementById('loading-overlay');
+        
+        let currentEpIndex = 0;
+        let currentServerType = 'linkVIP'; //Default là server VIP
 
         function renderButtons() {
             const btnContainer = document.getElementById('list-buttons');
-            btnContainer.innerHTML = ''; // Xóa sạch khoảng trắng thừa
+            btnContainer.innerHTML = ''; 
             
             dsTapPhim.forEach((tap, index) => {
                 let btn = document.createElement('button');
                 btn.className = 'ep-btn-custom';
-                btn.innerText = `Tập Full`;
-                
-                // Sửa lại cách gọi hàm để không bao giờ bị trượt nút
+                btn.innerText = `Tập ${index + 1}`;
                 btn.onclick = () => playVideo(index);
                 btnContainer.appendChild(btn);
             });
         }
 
         function playVideo(index) {
-            overlay.style.display = 'flex'; // Bật màn hình chờ
+            currentEpIndex = index;
+            
+            // LƯU TRÍ NHỚ: Ghi lại tập đang xem vào bộ nhớ của trình duyệt
+            localStorage.setItem('mhent_eiga_kimi_to_idol_precure_last_ep', index);
+
+            overlay.style.display = 'flex'; 
             
             setTimeout(() => {
-                player.src = dsTapPhim[index].link;
+                player.src = dsTapPhim[index][currentServerType]; 
                 epTitle.innerText = dsTapPhim[index].title;
-                document.title = `Đang xem Tập Full - ${movieName} - MHEnt. Cinema`;
+                document.title = `Đang xem Tập ${index + 1} - ${movieName} - MHEnt. Cinema`;
                 
-                // Tẩy màu nút cũ và tô hồng nút mới (Cách này an toàn 100%)
                 const allBtns = document.querySelectorAll('.ep-btn-custom');
                 allBtns.forEach(b => b.classList.remove('active'));
                 if (allBtns[index]) allBtns[index].classList.add('active');
                 
-                overlay.style.display = 'none'; // Tắt màn hình chờ
+                overlay.style.display = 'none'; 
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-            }, 1500); 
+            }, 1000); 
+        }
+
+        function changeServer(serverType) {
+            currentServerType = serverType; 
+            
+            document.getElementById('btn-server-vip').classList.remove('active');
+            document.getElementById('btn-server-dp').classList.remove('active');
+            
+            if (serverType === 'linkVIP') {
+                document.getElementById('btn-server-vip').classList.add('active');
+            } else {
+                document.getElementById('btn-server-dp').classList.add('active');
+            }
+
+            overlay.style.display = 'flex';
+            setTimeout(() => {
+                player.src = dsTapPhim[currentEpIndex][currentServerType];
+                overlay.style.display = 'none';
+            }, 500); 
         }
 
         function toggleDescription() {
@@ -150,20 +186,9 @@
             }
         }
 
-        function toggleDarkMode() { document.body.classList.toggle('dark-mode'); }
-
-        // Khởi động
-        renderButtons();
-        playVideo(0); // Gọi trực tiếp tập 0 (Tập 1) cực an toàn
-
         function toggleDarkMode() { 
-            // Tắt / Bật giao diện tối
             document.body.classList.toggle('dark-mode'); 
-            
-            // Tìm cái nút
             const btnDarkMode = document.getElementById('btn-dark-mode');
-            
-            // Kiểm tra: Nếu web đang màu đen thì đổi chữ thành "Bật đèn" và ngược lại
             if (document.body.classList.contains('dark-mode')) {
                 btnDarkMode.innerText = "💡 Bật đèn";
             } else {
@@ -171,19 +196,28 @@
             }
         }
 
-        // Tính năng Back to Top (Phiên bản chống lỗi)
-        const backToTopBtn = document.getElementById("btn-back-to-top");
+        // TỰ ĐỘNG KHÔI PHỤC TRÍ NHỚ KHI VÀO WEB
+        renderButtons();
+        let savedEp = localStorage.getItem('mhent_eiga_kimi_to_idol_precure_last_ep');
+        let startEp = savedEp !== null ? parseInt(savedEp) : 0; // Nếu chưa xem bao giờ thì phát tập 1 (index 0)
+        
+        // Đề phòng trường hợp cậu xóa bớt tập phim
+        if (startEp >= dsTapPhim.length || startEp < 0) {
+            startEp = 0;
+        }
+        
+        playVideo(startEp); 
 
-        if (backToTopBtn) { // Kiểm tra xem nút có tồn tại trên trang không
+        // Back to top
+        const backToTopBtn = document.getElementById("btn-back-to-top");
+        if (backToTopBtn) { 
             window.addEventListener("scroll", () => {
-                // Dùng cả 2 cách đo thanh cuộn cho chắc ăn
                 if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                     backToTopBtn.style.display = "block";
                 } else {
                     backToTopBtn.style.display = "none";
                 }
             });
-
             backToTopBtn.addEventListener("click", () => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
             });
