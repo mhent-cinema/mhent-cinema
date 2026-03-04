@@ -189,6 +189,7 @@ footer {
 .poster-big { 
     width: 300px; 
     height: auto; /* Cho phép ảnh hiển thị đúng tỷ lệ gốc, không bóp méo */
+    aspect-ratio: 2 / 3;
     border-radius: 15px; 
     box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Thêm bóng đổ cho ngầu */
 }
