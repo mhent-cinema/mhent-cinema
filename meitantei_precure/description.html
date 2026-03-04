@@ -59,27 +59,32 @@
     </div>
 
     <script>
+        var fbTrailerLink = "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fmharuto.entertainment%2Fvideos%2F2007201789911311%2F&show_text=false&width=560&t=0";
+        var modal = document.getElementById('trailerModal');
+
+        function openTrailer() {
+            modal.style.display = 'flex';
+            document.getElementById('trailerIframe').src = fbTrailerLink; 
+        }
+
         function closeTrailer() {
-            // 1. Giấu cái khung đen đi
-            document.getElementById('trailerModal').style.display = 'none';
-            // 2. Tìm cái video và "F5" (tải lại) riêng cái khung video đó để nó ngừng phát
-            var iframe = document.getElementById('trailerIframe');
-            iframe.src = iframe.src;
+            modal.style.display = 'none';
+            document.getElementById('trailerIframe').src = ""; 
+        }
 
-            // TÍNH NĂNG 1: Bấm phím ESC để đóng
-            document.addEventListener('keydown', function(event) {
-                if (event.key === "Escape") { // Nếu phím được bấm là nút Esc
-                    if (modal.style.display === 'flex') { // Và nếu cái khung đen đang hiện
-                        closeTrailer(); // Thì rút điện, đóng khung!
-                    }
+        // TÍNH NĂNG 1: Bấm phím ESC để đóng
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") { // Nếu phím được bấm là nút Esc
+                if (modal.style.display === 'flex') { // Và nếu cái khung đen đang hiện
+                    closeTrailer(); // Thì rút điện, đóng khung!
                 }
-            });
+            }
+        });
 
-            // TÍNH NĂNG 2: Click chuột ra ngoài vùng nền đen cũng tự đóng
-            window.onclick = function(event) {
-                if (event.target === modal) {
-                    closeTrailer();
-                }
+        // TÍNH NĂNG 2: Click chuột ra ngoài vùng nền đen cũng tự đóng
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                closeTrailer();
             }
         }
     </script>
