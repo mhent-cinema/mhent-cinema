@@ -46,7 +46,7 @@
             
             <div class="btn-group">
                 <a href="watch.html" class="btn-watch">▶ Vào Rạp Xem Phim</a>
-                <button class="btn-trailer" onclick="openTrailer()">🎬 Xem Trailer</button>
+                <button class="btn-trailer" onclick="document.getElementById('trailerModal').style.display='flex'">🎬 Xem Trailer</button>
             </div>
         </div>
     </div>
@@ -54,26 +54,17 @@
     <div id="trailerModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeTrailer()">&times;</span>
-            <iframe id="trailerIframe" src="" allow="autoplay" allowfullscreen></iframe>
+            <iframe id="trailerIframe" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fmharuto.entertainment%2Fvideos%2F2007201789911311%2F&show_text=false&width=560&t=0" allowfullscreen></iframe>
         </div>
     </div>
 
     <script>
-        // Đây là link Facebook của cậu, tớ đã lén nhét thêm cái đuôi &autoplay=1 vào cuối cùng
-        var fbTrailerLink = "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fmharuto.entertainment%2Fvideos%2F2007201789911311%2F&show_text=false&width=560&t=0&autoplay=1";
-
-        function openTrailer() {
-            // Mở khung đen lên
-            document.getElementById('trailerModal').style.display = 'flex';
-            // Cắm điện: Bơm link có autoplay vào, video sẽ lập tức tự chạy!
-            document.getElementById('trailerIframe').src = fbTrailerLink; 
-        }
-
         function closeTrailer() {
-            // Giấu khung đen đi
+            // 1. Giấu cái khung đen đi
             document.getElementById('trailerModal').style.display = 'none';
-            // Rút điện: Xóa trắng link, đảm bảo video chết cứng 100% không còn tiếng
-            document.getElementById('trailerIframe').src = ""; 
+            // 2. Tìm cái video và "F5" (tải lại) riêng cái khung video đó để nó ngừng phát
+            var iframe = document.getElementById('trailerIframe');
+            iframe.src = iframe.src;
         }
     </script>
 
