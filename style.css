@@ -586,6 +586,10 @@ body.dark-mode .footer-link:hover { color: #fff; }
         height: fit-content; /* <-- CHÍNH LÀ LỆNH NÀY! Ép hộp trắng ôm sát sạt vào nút, không cho dài ra nữa */
         padding: 15px !important; /* Ép padding nhỏ lại */
         border-radius: 12px;
+        max-width: 400px;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
     }
     .episode-sidebar h3 {
         font-size: 16px;
