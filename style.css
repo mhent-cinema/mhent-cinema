@@ -235,71 +235,84 @@ footer {
    GIAO DIỆN TRANG XEM PHIM (WATCH PAGE)
    ========================================= */
 
-/* --- TẠO KHOẢNG CÁCH VỚI LỀ (DÙNG CHUNG) --- */
+/* --- CONTAINER CHUẨN --- */
 .watch-container {
-    max-width: 1200px; /* Giới hạn chiều ngang tổng thể */
-    margin: 80px auto 40px; /* 80px để né thanh Nav ở trên, auto để căn giữa lề */
-    padding: 0 40px; /* Tạo khoảng trống 40px hai bên lề để không bao giờ đụng vách */
+    max-width: 1200px;
+    margin: 100px auto 50px;
+    padding: 0 30px;
 }
 
-/* --- BỐ CỤC PHÒNG CHIẾU --- */
-.watch-layout { 
-    display: flex; 
-    gap: 30px; /* Tăng khoảng cách giữa video và danh sách tập */
-    align-items: flex-start;
+/* --- FIX TỈ LỆ PLAYER VÀ SIDEBAR --- */
+.watch-layout { display: flex; gap: 25px; align-items: stretch; }
+.video-section { flex: 2.5; }
+.episode-sidebar { 
+    flex: 0.8; 
+    background: #fff; 
+    padding: 20px; 
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
-.video-section {
-    flex: 3; /* Giảm nhẹ tỉ lệ để Player không quá to */
+/* --- NÚT TẬP PHIM SIÊU ĐẸP (VẺ ĐẸP CŨ) --- */
+.ep-grid-v2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
 }
 
-.episode-sidebar {
-    flex: 1;
-    background: #fff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    margin-top: 20px; /* Thêm lề trên để né Nav bar */
+.ep-btn-custom {
+    padding: 10px;
+    border: none;
+    background: #f0f0f0;
+    color: #555;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* --- GẠCH NGANG TRƯỜNG KỶ --- */
-.separator-left {
-    border: 0;
-    border-top: 2px solid #eee;
-    margin: 40px 0;
-    width: 100%; /* Dài hết chiều ngang container */
+.ep-btn-custom:hover { background: #ffe0e9; color: #ff85a2; }
+.ep-btn-custom.active {
+    background: #ff85a2; /* Màu hồng xịn xò của cậu đây! */
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 133, 162, 0.4);
 }
 
-/* --- KHUNG THÔNG TIN --- */
-.details-container-small {
+/* --- FIX TỈ LỆ POSTER Ở DƯỚI --- */
+.info-footer-container {
     display: flex;
-    gap: 30px;
-    padding: 20px 0; /* Xóa padding lề trái riêng để nó theo container tổng */
-    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
 }
 
-/* --- TÍNH NĂNG XEM THÊM --- */
-.description-container {
-    position: relative;
-    max-height: 100px; /* Chiều cao ban đầu khi chưa bấm Xem thêm */
+.poster-watch-fix {
+    width: 220px; /* Cố định chiều rộng để không bị tỉ lệ nghịch */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.info-content-box { flex: 1; }
+
+/* --- HIỆU ỨNG XEM THÊM --- */
+.description-scroll {
+    max-height: 120px;
     overflow: hidden;
-    transition: max-height 0.5s ease;
+    transition: max-height 0.4s ease;
+    line-height: 1.6;
 }
-
-.description-container.expanded {
-    max-height: 1000px; /* Bung lụa khi bấm nút */
-}
-
-.btn-show-more {
+.description-scroll.expanded { max-height: 1000px; }
+.btn-read-more {
+    margin-top: 10px;
     background: none;
     border: none;
     color: #ff85a2;
-    font-weight: bold;
+    font-weight: 900;
     cursor: pointer;
-    margin-top: 10px;
-    padding: 0;
+    text-transform: uppercase;
+    font-size: 12px;
 }
-
 /* Nút tắt đèn */
 .cinema-tools { margin-top: 15px; font-weight: bold; color: #666; }
 .tool-btn { margin-left: 10px; padding: 5px 15px; border-radius: 20px; border: 1px solid #ff85a2; background: none; color: #ff85a2; cursor: pointer; }
