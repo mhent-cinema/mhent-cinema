@@ -90,37 +90,39 @@
         const epTitle = document.getElementById('current-episode');
         const overlay = document.getElementById('loading-overlay');
 
-        // 2. Tạo nút
         function renderButtons() {
             const btnContainer = document.getElementById('list-buttons');
+            btnContainer.innerHTML = ''; // Xóa sạch khoảng trắng thừa
+            
             dsTapPhim.forEach((tap, index) => {
                 let btn = document.createElement('button');
                 btn.className = 'ep-btn-custom';
                 btn.innerText = `Tập ${index + 1}`;
-                btn.onclick = () => playVideo(index, btn);
+                
+                // Sửa lại cách gọi hàm để không bao giờ bị trượt nút
+                btn.onclick = () => playVideo(index);
                 btnContainer.appendChild(btn);
             });
         }
 
-        // 3. Xử lý chuyển tập (Có Loading + Đổi tên Tab)
-        function playVideo(index, btnElement) {
+        function playVideo(index) {
             overlay.style.display = 'flex'; // Bật màn hình chờ
             
             setTimeout(() => {
-                player.src = dsTapPhim[index].link; // Đổi link phim
-                epTitle.innerText = dsTapPhim[index].title; // Đổi tên tập trên web
-                document.title = `Đang xem Tập ${index + 1} - ${movieName}`; // Đổi tên Tab
+                player.src = dsTapPhim[index].link;
+                epTitle.innerText = dsTapPhim[index].title;
+                document.title = `Đang xem Tập ${index + 1} - ${movieName}`;
                 
-                // Đổi màu nút
-                document.querySelectorAll('.ep-btn-custom').forEach(b => b.classList.remove('active'));
-                btnElement.classList.add('active');
+                // Tẩy màu nút cũ và tô hồng nút mới (Cách này an toàn 100%)
+                const allBtns = document.querySelectorAll('.ep-btn-custom');
+                allBtns.forEach(b => b.classList.remove('active'));
+                if (allBtns[index]) allBtns[index].classList.add('active');
                 
                 overlay.style.display = 'none'; // Tắt màn hình chờ
-                window.scrollTo({ top: 0, behavior: 'smooth' }); // Cuộn lên đầu
-            }, 1500); // 1500ms = 1.5 giây
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 1500); 
         }
 
-        // 4. Tính năng Xem thêm
         function toggleDescription() {
             const container = document.getElementById('desc-container');
             const btn = document.getElementById('btn-toggle');
@@ -133,12 +135,11 @@
             }
         }
 
-        // 5. Tính năng tắt đèn
         function toggleDarkMode() { document.body.classList.toggle('dark-mode'); }
 
-        // Khởi động rạp
+        // Khởi động
         renderButtons();
-        playVideo(0, document.getElementById('list-buttons').firstChild);
+        playVideo(0); // Gọi trực tiếp tập 0 (Tập 1) cực an toàn
     </script>
 </body>
 </html>
