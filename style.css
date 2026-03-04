@@ -615,6 +615,7 @@ body.dark-mode .btn-back:hover { background: #ff85a2; color: #fff; }
     /* 8. ÉP CÂN TOÀN DIỆN KHỐI DANH SÁCH TẬP */
     .episode-sidebar {
         height: fit-content; /* <-- CHÍNH LÀ LỆNH NÀY! Ép hộp trắng ôm sát sạt vào nút, không cho dài ra nữa */
+        min-height: 200px;
         padding: 15px !important; /* Ép padding nhỏ lại */
         border-radius: 12px;
         max-width: 400px;
