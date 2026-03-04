@@ -1,8 +1,19 @@
 /* =========================================
-   LANDING PAGE
+   MHEnt. CINEMA - MAIN STYLESHEET
+   Mục lục:
+   1. Thiết lập chung & Menu
+   2. Trang chủ (Landing Page)
+   3. Trang thông tin (Details Page)
+   4. Trang xem phim (Watch Page & Tools)
+   5. Về chúng tớ (About Page)
+   6. Chân trang & Nút Lên đầu trang
+   7. Chế độ tối (Dark Mode - Tổng hợp)
+   8. Giao diện Điện thoại (Mobile Responsive)
    ========================================= */
 
-/* --- THIẾT LẬP CHUNG --- */
+/* =========================================
+   1. THIẾT LẬP CHUNG & MENU
+   ========================================= */
 body {
     font-family: 'Nunito', sans-serif;
     margin: 0;
@@ -12,22 +23,19 @@ body {
     color: #333;
 }
 
-/* --- THANH MENU --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
     padding: 10px 40px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    position: fixed;  /* Ghim chặt nó lại */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 9999;    /* Đảm bảo nó luôn nổi lên trên cùng, không bị video đè */
-    background: #fff; /* Nền trắng để không bị chữ ở dưới xuyên thấu */
-    box-shadow: 0 2px 15px rgba(0,0,0,0.08); /* Thêm tí bóng đổ cho tách biệt */
-    box-sizing: border-box; /* Ép nó không bị tràn viền */
+    z-index: 9999;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    box-sizing: border-box;
 }
 
 .nav-left {
@@ -37,11 +45,17 @@ body {
     text-decoration: none;
 }
 
-/* AVATAR TRÒN */
+.nav-left a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
 .avt-img {
     width: 45px;
     height: 45px;
-    border-radius: 50%; /* Bo tròn */
+    border-radius: 50%;
     object-fit: cover;
     border: 2px solid #ff85a2;
 }
@@ -60,23 +74,18 @@ body {
 }
 
 .nav-links a {
-    text-decoration: none; /* <--- Thêm đúng dòng này để xóa gạch chân */
+    text-decoration: none;
     color: #555;
     font-weight: 700;
-}
-
-.nav-left a {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    text-decoration: none; /* Xóa gạch chân của link */
 }
 
 .nav-links a:hover {
     color: #ff85a2;
 }
 
-/* --- BANNER --- */
+/* =========================================
+   2. TRANG CHỦ (LANDING PAGE)
+   ========================================= */
 .hero {
     background: linear-gradient(135deg, #e0f7fa 0%, #ffe4e1 100%);
     padding: 80px 20px;
@@ -95,7 +104,6 @@ body {
     margin: 0;
 }
 
-/* --- KHU VỰC PHIM --- */
 .movie-section {
     padding: 40px 50px;
 }
@@ -103,30 +111,27 @@ body {
 .section-title {
     font-size: 32px;
     margin-bottom: 30px;
-    text-align: left; /* Chữ căn lề trái như bản vẽ */
+    text-align: left;
     border-bottom: 3px solid #ff85a2;
     display: inline-block;
     padding-bottom: 5px;
 }
 
-/* DANH SÁCH PHIM XẾP NGANG */
 .movie-list {
     display: flex;
     gap: 30px;
     flex-wrap: wrap; 
 }
 
-/* THẺ PHIM ĐƠN LẺ */
 .movie-card {
-    width: 200px; /* Bề ngang của thẻ phim */
+    width: 200px;
     display: flex;
     flex-direction: column;
 }
 
-/* BÌA ANIME DỌC (PORTRAIT) */
 .anime-poster {
     width: 100%;
-    aspect-ratio: 2 / 3; /* Ép tỷ lệ ảnh thành hình chữ nhật đứng chuẩn Anime Poster */
+    aspect-ratio: 2 / 3;
     object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -134,10 +139,9 @@ body {
 }
 
 .movie-card:hover .anime-poster {
-    transform: translateY(-5px); /* Trỏ chuột vào ảnh sẽ nảy nhẹ lên */
+    transform: translateY(-5px);
 }
 
-/* Màu thay thế nếu chưa có ảnh */
 .bg-blue { background-color: #aed9e0; }
 .bg-pink { background-color: #ffb7b2; }
 .bg-gray { background-color: #e2e2e2; }
@@ -150,25 +154,14 @@ body {
     font-weight: bold;
 }
 
-/* THÔNG TIN DƯỚI ẢNH */
 .movie-info {
     padding-top: 15px;
     text-align: left;
 }
 
-.movie-info h3 {
-    margin: 0 0 5px 0;
-    font-size: 16px;
-    color: #333;
-}
+.movie-info h3 { margin: 0 0 5px 0; font-size: 16px; color: #333; }
+.movie-info p { margin: 0 0 15px 0; font-size: 13px; color: #777; }
 
-.movie-info p {
-    margin: 0 0 15px 0;
-    font-size: 13px;
-    color: #777;
-}
-
-/* NÚT XEM PHIM */
 .watch-link {
     text-decoration: none;
     color: #ff85a2;
@@ -177,367 +170,20 @@ body {
     transition: color 0.2s;
 }
 
-.watch-link:hover {
-    color: #ff5277;
-}
-
-.disabled {
-    color: #ccc;
-    cursor: not-allowed;
-}
-
-/* --- CHÂN TRANG --- */
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    background-color: #ffffff;
-    color: #999;
-    border-top: 1px solid #eee;
-    font-size: 14px;
-}
-
-/* NÚT LÊN ĐẦU TRANG */
-#btn-back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    display: none; /* Ẩn mặc định */
-    background-color: #ff85a2;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(255,133,162,0.4);
-    z-index: 1000;
-    transition: 0.3s;
-}
-#btn-back-to-top:hover {
-    background-color: #ff5c8a;
-    transform: translateY(-5px); /* Hiệu ứng nảy lên khi đưa chuột vào */
-}
+.watch-link:hover { color: #ff5277; }
+.disabled { color: #ccc; cursor: not-allowed; }
 
 /* =========================================
-   GIAO DIỆN TRANG THÔNG TIN (DETAILS PAGE) & POPUP
+   3. TRANG THÔNG TIN (DETAILS PAGE)
    ========================================= */
-
-.details-container { 
-    display: flex; 
-    gap: 40px; 
-    max-width: 900px; 
-    margin: 50px auto; 
-    background: white; 
-    padding: 30px; 
-    border-radius: 20px; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-    align-items: flex-start; /* <--- CỨU TINH CHÍNH LÀ DÒNG NÀY! Ép dính lên nóc! */
-}
-
-.poster-big { 
-    width: 300px; /* Trả lại bề ngang to đẹp cho ẻm */
-    height: auto; 
-    object-fit: contain;
-    border-radius: 15px; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15); 
-}
-.info-box h1 { color: #ff85a2; font-size: 36px; margin-top: 0; }
-.tag { background: #ffe4e1; color: #ff5277; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 14px; }
-.description { color: #555; line-height: 1.6; margin: 20px 0; }
-
-/* Cụm nút bấm */
-.btn-group { display: flex; gap: 15px; margin-top: 30px; }
-.btn-watch { background: #ff85a2; color: white; padding: 12px 25px; text-decoration: none; border-radius: 10px; font-weight: bold; transition: 0.2s; }
-.btn-watch:hover { background: #ff5277; transform: translateY(-3px); }
-.btn-trailer { background: #333; color: white; padding: 12px 25px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.2s; }
-.btn-trailer:hover { background: #000; transform: translateY(-3px); }
-
-/* POPUP TRAILER */
-.modal { 
-    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-    background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; 
-}
-.modal-content { background: #000; padding: 10px; border-radius: 10px; position: relative; width: 800px; max-width: 90%; }
-.modal-content iframe { width: 100%; aspect-ratio: 16/9; border: none; }
-.close-btn { position: absolute; top: -40px; right: 0; color: white; font-size: 30px; cursor: pointer; font-weight: bold; }
-
-/* =========================================
-   GIAO DIỆN TRANG XEM PHIM (WATCH PAGE)
-   ========================================= */
-
-/* 1. Canh lề chuẩn, đẩy lùi khỏi Navbar */
-.watch-container {
-    max-width: 1350px; /* <--- KÉO DÃN Ở ĐÂY CHO MÀN HÌNH TO */
-    margin: 100px auto 50px;
-    padding: 0 40px; /* Thêm tí padding lề để không dính vách màn hình siêu nhỏ */
-}
-
-/* 2. Chia bố cục Video và Sidebar */
-.watch-layout { display: flex; gap: 30px; align-items: flex-start; }
-.video-section { flex: 3; min-width: 0; }
-.episode-sidebar { 
-    flex: 1; 
-    background: #fff; 
-    padding: 20px; 
-    border-radius: 15px; 
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08); 
-}
-
-/* 3. Khung Player 16:9 xịn xò */
-.video-player-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* Ép khung video chuẩn tỉ lệ màn hình ngang */
-    height: 0;
-    background: #000;
-    border-radius: 12px;
-    overflow: hidden;
-    margin: 15px 0;
-}
-.video-player-wrapper iframe {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-}
-
-/* Hộp chứa Video và Tên phim */
-.video-box {
-    background: #fff;
-    padding: 25px; /* Tạo khoảng thở bên trong hộp */
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Đổ bóng cho giống sidebar bên cạnh */
-}
-
-/* 4. Trả lại bộ Nút "đẹp vl" */
-.ep-grid-v2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); /* Nút tự dàn hàng */
-    gap: 10px;
-    margin-top: 15px;
-}
-.ep-btn-custom {
-    padding: 10px 5px;
-    border: none;
-    background: #f0f0f0;
-    color: #555;
-    border-radius: 8px;
-    font-weight: 900;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Nunito', sans-serif; /* <--- THÊM DÒNG NÀY ĐỂ SỬA FONT */
-    font-weight: 800; /* Cho chữ đậm hơn tí nhìn cho rõ */
-}
-.ep-btn-custom:hover { background: #ffe0e9; color: #ff85a2; }
-.ep-btn-custom.active { background: #ff85a2; color: #fff; box-shadow: 0 4px 10px rgba(255, 133, 162, 0.4); }
-
-/* 5. Khung thông tin dưới gầm */
-.separator-full { border: 0; border-top: 2px solid #eee; margin: 40px 0; }
-.info-footer-container { display: flex; gap: 30px; align-items: flex-start; }
-.poster-watch-fix {
-    width: 200px; /* Khóa chết bề ngang poster cho xinh */
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-.info-content-box { flex: 1; }
-
-/* 6. Nút Xem thêm / Thu gọn */
-.description-scroll {
-    max-height: 100px; /* Giới hạn độ dài ban đầu */
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-    line-height: 1.6;
-}
-.description-scroll.expanded { max-height: 1000px; } /* Trượt xuống mượt mà */
-.btn-read-more {
-    margin-top: 10px; background: none; border: none;
-    color: #ff85a2; font-weight: bold; cursor: pointer; padding: 0;
-}
-
-/* 7. Hiệu ứng Loading màn hình chờ */
-.loading-overlay {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    display: none; flex-direction: column; justify-content: center; align-items: center;
-    z-index: 9999; /* Đè lên tất cả */
-}
-.spinner {
-    width: 50px; height: 50px; border: 5px solid #f3f3f3;
-    border-top: 5px solid #ff85a2; border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-/* 8. Chế độ Tắt Đèn */
-body.dark-mode { background-color: #1a1a1a; color: #eee; }
-body.dark-mode .episode-sidebar, body.dark-mode .navbar { background-color: #2a2a2a; color: #fff; }
-body.dark-mode .ep-btn-custom { background: #333; color: #bbb; }
-body.dark-mode .ep-btn-custom:hover { background: #444; color: #ff85a2; }
-body.dark-mode .ep-btn-custom.active { background: #ff85a2; color: #fff; }
-body.dark-mode .separator-full { border-color: #333; }
-body.dark-mode .video-box { /* <--- THÊM CÁI NÀY */
-    background-color: #2a2a2a; 
-    color: #ffffff;
-}
-
-/*9. Chỉnh lại màu Text */
-/* Nâng cấp Font chữ Tên phim */
-.watch-header h2 {
-    font-size: 30px;
-    color: #ff85a2; 
-    text-shadow: 1px 1px 2px rgba(255, 133, 162, 0.2);
-    margin-bottom: 10px;
-    font-weight: 900;
-}
-
-/* Nâng cấp Tên tập (Làm thành dạng khung Tag) */
-#current-episode {
-    font-size: 16px;
-    color: #ff5c8a;
-    font-weight: 800;
-    background: #fff0f3; /* Nền hồng pastel siêu nhạt */
-    display: inline-block; /* Ôm sát chữ */
-    padding: 6px 15px;
-    border-radius: 20px;
-    border: 1px solid #ffb6c1;
-    margin-top: 0;
-}
-
-/* Chế độ Tắt đèn cho Tên tập */
-body.dark-mode #current-episode {
-    background: #333;
-    color: #ff85a2;
-    border-color: #ff85a2;
-}
-
-/* 10. Chỉnh nút Tool */
-.tool-btn {
-    padding: 8px 15px;
-    border: none;
-    background: #f0f0f0;
-    color: #555;
-    border-radius: 8px;
-    font-weight: 800;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Nunito', sans-serif;
-}
-.tool-btn:hover {
-    background: #ffe0e9; 
-    color: #ff85a2;
-}
-
-/* Đổi màu nút Tắt đèn khi tắt đèn */
-body.dark-mode .tool-btn {
-    background: #444;
-    color: #ff85a2;
-}
-
-/* =========================================
-   PHẦN CSS CHO TRANG VỀ CHÚNG TỚ (ABOUT)
-   ========================================= */
-.about-container {
-    max-width: 900px;
-    margin: 120px auto 50px;
-    padding: 0 30px;
-    text-align: center;
-}
-
-/* Header Giới thiệu */
-.about-logo {
-    width: 120px;
-    border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(255,133,162,0.3);
-    margin-bottom: 20px;
-}
-.about-header h1 { color: #ff85a2; margin-bottom: 5px; font-size: 28px; }
-.about-subtitle { font-weight: bold; color: #888; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; margin-bottom: 25px; }
-.about-desc { background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); line-height: 1.8; margin-bottom: 50px; }
-
-/* Grid Dự án */
-.about-projects h2, .about-social h2 { color: #555; margin-bottom: 20px; }
-.project-grid { display: flex; gap: 20px; justify-content: center; margin-bottom: 50px; flex-wrap: wrap; }
-.project-card { 
-    background: #fff; padding: 20px; border-radius: 15px; width: 45%; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 2px solid #fff0f3;
-}
-
-/* Nút Mạng xã hội */
-.social-buttons { display: flex; gap: 15px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
-.btn-social {
-    padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold;
-    color: #fff; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-.fb-page { background: #1877F2; } /* Màu xanh Facebook */
-.fb-page:hover { background: #145dbf; transform: translateY(-3px); }
-.fb-cinema { background: #ff85a2; } /* Màu hồng MHEnt */
-.fb-cinema:hover { background: #ff5c8a; transform: translateY(-3px); }
-
-/* Chế độ tối cho trang About */
-body.dark-mode .about-desc, body.dark-mode .project-card { background: #2a2a2a; border-color: #333; color: #eee; }
-body.dark-mode .about-projects h2, body.dark-mode .about-social h2 { color: #ddd; }
-
-/* =========================================
-   TRANG TRÍ CHÂN TRANG (FOOTER)
-   ========================================= */
-footer {
-    background: #f9f9f9;
-    padding: 25px 0;
-    width: 100%;
-    margin-top: 50px;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.02); /* Đổ bóng nhẹ lên trên */
-}
-
-.footer-bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.footer-bottom p {
-    margin: 0;
-    color: #777;
-    font-size: 14px;
-}
-
-.footer-social {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.footer-link {
-    text-decoration: none;
-    color: #ff85a2;
-    font-weight: 800;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.footer-link:hover {
-    color: #ff5c8a; /* Đậm hơn xíu khi di chuột vào */
-}
-
-.footer-dot {
-    color: #ccc;
-    font-size: 12px;
-}
-
-/* Chế độ Tắt đèn cho Footer mới */
-body.dark-mode footer { background-color: #2a2a2a; border-top: 1px solid #333; box-shadow: none; }
-body.dark-mode .footer-bottom p { color: #aaa; }
-body.dark-mode .footer-dot { color: #555; }
-body.dark-mode .footer-link { color: #ff85a2; }
-body.dark-mode .footer-link:hover { color: #fff; }
-
+/* Nút Quay Lại */
 .back-btn-wrapper {
     max-width: 1000px;
-    margin: 110px auto -30px; /* Đẩy lùi Navbar 110px, kéo khung mô tả sát lên 30px */
+    margin: 110px auto -30px;
     padding: 0 20px;
     position: relative;
     z-index: 10;
 }
-
 .btn-back {
     display: inline-block;
     text-decoration: none;
@@ -550,102 +196,236 @@ body.dark-mode .footer-link:hover { color: #fff; }
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
 }
-
 .btn-back:hover {
     background: #ff85a2;
     color: #fff;
-    transform: translateX(-5px); /* Hiệu ứng lùi về bên trái cực mượt */
+    transform: translateX(-5px);
 }
 
-/* Chế độ Tắt đèn cho nút Back */
+/* Khung Chi tiết */
+.details-container { 
+    display: flex; gap: 40px; max-width: 900px; margin: 50px auto; 
+    background: white; padding: 30px; border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); align-items: flex-start;
+}
+.poster-big { 
+    width: 300px; height: auto; object-fit: contain;
+    border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); 
+}
+.info-box h1 { color: #ff85a2; font-size: 36px; margin-top: 0; }
+.tag { background: #ffe4e1; color: #ff5277; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 14px; }
+.description { color: #555; line-height: 1.6; margin: 20px 0; }
+
+.btn-group { display: flex; gap: 15px; margin-top: 30px; }
+.btn-watch { background: #ff85a2; color: white; padding: 12px 25px; text-decoration: none; border-radius: 10px; font-weight: bold; transition: 0.2s; }
+.btn-watch:hover { background: #ff5277; transform: translateY(-3px); }
+.btn-trailer { background: #333; color: white; padding: 12px 25px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+.btn-trailer:hover { background: #000; transform: translateY(-3px); }
+
+/* Popup Trailer */
+.modal { 
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; 
+}
+.modal-content { background: #000; padding: 10px; border-radius: 10px; position: relative; width: 800px; max-width: 90%; }
+.modal-content iframe { width: 100%; aspect-ratio: 16/9; border: none; }
+.close-btn { position: absolute; top: -40px; right: 0; color: white; font-size: 30px; cursor: pointer; font-weight: bold; }
+
+/* =========================================
+   4. TRANG XEM PHIM (WATCH PAGE)
+   ========================================= */
+.watch-container {
+    max-width: 1350px;
+    margin: 100px auto 50px;
+    padding: 0 40px;
+}
+.watch-layout { display: flex; gap: 30px; align-items: flex-start; }
+.video-section { flex: 3; min-width: 0; }
+.episode-sidebar { 
+    flex: 1; background: #fff; padding: 20px; border-radius: 15px; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08); 
+}
+
+.video-player-wrapper {
+    position: relative; padding-bottom: 56.25%; height: 0;
+    background: #000; border-radius: 12px; overflow: hidden; margin: 15px 0;
+}
+.video-player-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.video-box {
+    background: #fff; padding: 25px; border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.watch-header h2 {
+    font-size: 30px; color: #ff85a2; text-shadow: 1px 1px 2px rgba(255, 133, 162, 0.2);
+    margin-bottom: 10px; font-weight: 900;
+}
+#current-episode {
+    font-size: 16px; color: #ff5c8a; font-weight: 800; background: #fff0f3;
+    display: inline-block; padding: 6px 15px; border-radius: 20px;
+    border: 1px solid #ffb6c1; margin-top: 0;
+}
+
+/* Các nút Tập Phim */
+.ep-grid-v2 {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); 
+    gap: 10px; margin-top: 15px;
+}
+.ep-btn-custom {
+    padding: 10px 5px; border: none; background: #f0f0f0; color: #555;
+    border-radius: 8px; font-weight: 800; cursor: pointer; transition: all 0.3s ease;
+    font-family: 'Nunito', sans-serif;
+}
+.ep-btn-custom:hover { background: #ffe0e9; color: #ff85a2; }
+.ep-btn-custom.active { background: #ff85a2; color: #fff; box-shadow: 0 4px 10px rgba(255, 133, 162, 0.4); }
+
+/* Hệ thống Tools & Chọn Server */
+.cinema-tools {
+    display: flex; flex-direction: column; gap: 12px; align-items: flex-start;
+    padding: 10px 15px; background: #fdf5f7; border-radius: 8px; margin-top: 15px;
+}
+.tools-top { display: flex; align-items: center; gap: 10px; }
+.server-list-mini { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.server-label { font-weight: 900; color: #ff5b84; font-size: 14px; }
+.server-btn-mini {
+    background: #fff; border: 1px solid #ff85a2; color: #ff85a2;
+    padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 12px;
+    font-weight: bold; transition: all 0.3s ease;
+}
+.server-btn-mini:hover { background: #ffe3e9; }
+.server-btn-mini.active { background: #ff85a2; color: #fff; border-color: #ff85a2; }
+
+.tool-btn {
+    padding: 8px 15px; border: none; background: #f0f0f0; color: #555;
+    border-radius: 8px; font-weight: 800; cursor: pointer; transition: all 0.3s ease;
+    font-family: 'Nunito', sans-serif;
+}
+.tool-btn:hover { background: #ffe0e9; color: #ff85a2; }
+
+/* Thông tin dưới gầm Watch Page */
+.separator-full { border: 0; border-top: 2px solid #eee; margin: 40px 0; }
+.info-footer-container { display: flex; gap: 30px; align-items: flex-start; }
+.poster-watch-fix { width: 200px; height: auto; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.info-content-box { flex: 1; }
+
+.description-scroll { max-height: 100px; overflow: hidden; transition: max-height 0.5s ease; line-height: 1.6; }
+.description-scroll.expanded { max-height: 1000px; }
+.btn-read-more { margin-top: 10px; background: none; border: none; color: #ff85a2; font-weight: bold; cursor: pointer; padding: 0; }
+
+/* Hiệu ứng Loading */
+.loading-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.95);
+    display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 9999;
+}
+.spinner { width: 50px; height: 50px; border: 5px solid #f3f3f3; border-top: 5px solid #ff85a2; border-radius: 50%; animation: spin 1s linear infinite; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* =========================================
+   5. TRANG VỀ CHÚNG TỚ (ABOUT PAGE)
+   ========================================= */
+.about-container { max-width: 900px; margin: 120px auto 50px; padding: 0 30px; text-align: center; }
+.about-logo { width: 120px; border-radius: 50%; box-shadow: 0 5px 15px rgba(255,133,162,0.3); margin-bottom: 20px; }
+.about-header h1 { color: #ff85a2; margin-bottom: 5px; font-size: 28px; }
+.about-subtitle { font-weight: bold; color: #888; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; margin-bottom: 25px; }
+.about-desc { background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); line-height: 1.8; margin-bottom: 50px; }
+
+.about-projects h2, .about-social h2 { color: #555; margin-bottom: 20px; }
+.project-grid { display: flex; gap: 20px; justify-content: center; margin-bottom: 50px; flex-wrap: wrap; }
+.project-card { background: #fff; padding: 20px; border-radius: 15px; width: 45%; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 2px solid #fff0f3; }
+
+.social-buttons { display: flex; gap: 15px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+.btn-social { padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; color: #fff; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.fb-page { background: #1877F2; }
+.fb-page:hover { background: #145dbf; transform: translateY(-3px); }
+.fb-cinema { background: #ff85a2; }
+.fb-cinema:hover { background: #ff5c8a; transform: translateY(-3px); }
+
+/* =========================================
+   6. CHÂN TRANG & NÚT LÊN ĐẦU TRANG
+   ========================================= */
+footer {
+    background: #f9f9f9; padding: 25px 0; width: 100%; margin-top: 50px; text-align: center;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.02); color: #999; font-size: 14px; border-top: 1px solid #eee;
+}
+.footer-bottom { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.footer-bottom p { margin: 0; color: #777; font-size: 14px; }
+.footer-social { display: flex; gap: 15px; align-items: center; }
+.footer-link { text-decoration: none; color: #ff85a2; font-weight: 800; font-size: 14px; transition: color 0.3s ease; }
+.footer-link:hover { color: #ff5c8a; }
+.footer-dot { color: #ccc; font-size: 12px; }
+
+#btn-back-to-top {
+    position: fixed; bottom: 30px; right: 30px; display: none; background-color: #ff85a2;
+    color: white; border: none; border-radius: 50%; width: 45px; height: 45px;
+    font-size: 20px; cursor: pointer; box-shadow: 0 4px 10px rgba(255,133,162,0.4);
+    z-index: 1000; transition: 0.3s;
+}
+#btn-back-to-top:hover { background-color: #ff5c8a; transform: translateY(-5px); }
+
+/* =========================================
+   7. CHẾ ĐỘ TỐI (DARK MODE - TỔNG HỢP)
+   ========================================= */
+body.dark-mode { background-color: #1a1a1a; color: #eee; }
+body.dark-mode .episode-sidebar, body.dark-mode .navbar { background-color: #2a2a2a; color: #fff; }
+body.dark-mode .video-box { background-color: #2a2a2a; color: #ffffff; }
+body.dark-mode #current-episode { background: #333; color: #ff85a2; border-color: #ff85a2; }
+body.dark-mode .separator-full { border-color: #333; }
+
+body.dark-mode .ep-btn-custom { background: #333; color: #bbb; }
+body.dark-mode .ep-btn-custom:hover { background: #444; color: #ff85a2; }
+body.dark-mode .ep-btn-custom.active { background: #ff85a2; color: #fff; }
+
+body.dark-mode .cinema-tools { background: #2a2a2a; }
+body.dark-mode .tool-btn { background: #444; color: #ff85a2; }
+body.dark-mode .server-btn-mini { background: #333; border-color: #ff85a2; color: #ff85a2; }
+body.dark-mode .server-btn-mini.active { background: #ff85a2; color: #121212; }
+
 body.dark-mode .btn-back { background: #2a2a2a; color: #ff85a2; }
 body.dark-mode .btn-back:hover { background: #ff85a2; color: #fff; }
 
+body.dark-mode .about-desc, body.dark-mode .project-card { background: #2a2a2a; border-color: #333; color: #eee; }
+body.dark-mode .about-projects h2, body.dark-mode .about-social h2 { color: #ddd; }
+
+body.dark-mode footer { background-color: #2a2a2a; border-top: 1px solid #333; box-shadow: none; }
+body.dark-mode .footer-bottom p { color: #aaa; }
+body.dark-mode .footer-dot { color: #555; }
+body.dark-mode .footer-link { color: #ff85a2; }
+body.dark-mode .footer-link:hover { color: #fff; }
+
 /* =========================================
-   📱 MA THUẬT GIAO DIỆN ĐIỆN THOẠI (MOBILE RESPONSIVE)
+   8. GIAO DIỆN ĐIỆN THOẠI (MOBILE RESPONSIVE)
    ========================================= */
-
-/* Lệnh này nghĩa là: Bất cứ màn hình nào nhỏ hơn 768px (iPad, iPhone), thì hãy áp dụng các luật sau: */
 @media screen and (max-width: 768px) {
-    
-    /* 1. Ép rạp phim lùi lại, sát lề điện thoại cho đỡ phí diện tích */
     .watch-container, .about-container, .details-container { 
-        padding: 0 15px; 
-        margin-top: 40px !important; 
+        padding: 0 15px; margin-top: 40px !important; 
     }
-
-    /* 2. QUAN TRỌNG NHẤT: Bẻ gãy hàng ngang, bắt Video và Danh sách tập xếp chồng lên nhau! */
-    .watch-layout { 
-        flex-direction: column; 
-        gap: 20px;
-    }
-    .video-section, .episode-sidebar { 
-        width: 100%; /* Giãn to hết cỡ bề ngang điện thoại */
-        flex: none; 
-    }
-
-    /* 3. Phần thông tin phim ở dưới cũng bẻ dọc và canh giữa luôn */
+    
+    .watch-layout { flex-direction: column; gap: 20px; }
+    .video-section, .episode-sidebar { width: 100%; flex: none; }
+    
     .info-footer-container, .details-container-small, .details-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
+        flex-direction: column; align-items: center; text-align: center; gap: 20px;
     }
-
-    /* 4. Thu nhỏ Poster lại cho vừa màn hình bé */
-    .poster-watch-fix, .poster-medium, .poster-big {
-        width: 150px;
-        margin: 0 auto;
-    }
-
-    /* 5. Cứu rỗi thanh Menu: Giấu chữ đi, chỉ để lại Logo và các link cho đỡ chật */
+    
+    .poster-watch-fix, .poster-medium, .poster-big { width: 150px; margin: 0 auto; }
+    
     .logo-name { display: none; }
     .nav-links { gap: 10px; font-size: 12px; }
     .nav-left img { width: 35px; height: 35px; }
-
-    /* 6. Trang About: Các thẻ dự án xếp dọc luôn */
+    
     .project-card { width: 100%; }
     
-    /* 7. Giấu luôn nút Back to Top cho màn hình đt đỡ rối mắt (hoặc thu nhỏ nó lại) */
-    #btn-back-to-top {
-        width: 35px; height: 35px; font-size: 16px;
-        bottom: 15px; right: 15px;
-    }
-
-    /* 8. ÉP CÂN TOÀN DIỆN KHỐI DANH SÁCH TẬP */
+    #btn-back-to-top { width: 35px; height: 35px; font-size: 16px; bottom: 15px; right: 15px; }
+    
     .episode-sidebar {
-        height: fit-content; /* <-- CHÍNH LÀ LỆNH NÀY! Ép hộp trắng ôm sát sạt vào nút, không cho dài ra nữa */
-        min-height: 200px;
-        padding: 15px !important; /* Ép padding nhỏ lại */
-        border-radius: 12px;
-        max-width: 400px;
-        width: 100%;
-        box-sizing: border-box;
-        margin: 0 auto;
+        height: fit-content; min-height: 200px; padding: 15px !important;
+        border-radius: 12px; max-width: 400px; width: 100%; box-sizing: border-box; margin: 0 auto;
     }
-    .episode-sidebar h3 {
-        font-size: 16px;
-        margin-top: 0;
-        margin-bottom: 15px;
-        text-align: center; /* Tiện tay canh giữa cái chữ "Danh sách tập" cho đẹp luôn */
-    }
-    .ep-grid-v2 {
-        grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
-        gap: 10px;
-    }
-    .ep-btn-custom {
-        padding: 6px 2px;
-        font-size: 12px;
-        border-radius: 8px;
-    }
-
-    /* Ép lề trên điện thoại */
-        .back-btn-wrapper {
-            margin-top: 100px;
-            margin-bottom: -10px;
-        }
-
-    .details-container {
-        padding-top: 40px;
-    }
+    .episode-sidebar h3 { font-size: 16px; margin-top: 0; margin-bottom: 15px; text-align: center; }
+    .ep-grid-v2 { grid-template-columns: repeat(auto-fill, minmax(45px, 1fr)); gap: 10px; }
+    .ep-btn-custom { padding: 6px 2px; font-size: 12px; border-radius: 8px; }
+    
+    .back-btn-wrapper { margin-top: 100px; margin-bottom: -10px; }
+    .details-container { padding-top: 40px; }
 }
