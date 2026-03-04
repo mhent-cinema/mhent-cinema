@@ -42,6 +42,7 @@ body {
     list-style: none;
     display: flex;
     gap: 30px;
+    text-decoration: none;
 }
 
 .nav-left a {
@@ -188,10 +189,11 @@ footer {
 
 .poster-big { 
     width: 300px; 
-    height: auto; /* Cho phép ảnh hiển thị đúng tỷ lệ gốc, không bóp méo */
-    aspect-ratio: 2 / 3;
+    height: 450px; /* Chốt cứng chiều cao cho ngang bằng với phần chữ */
+    object-fit: cover; /* Zoom lên và cắt phần thừa, TUYỆT ĐỐI KHÔNG BÓP MÉO */
+    object-position: top; /* Ưu tiên hiển thị từ phần đầu nhân vật trở xuống */
     border-radius: 15px; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Thêm bóng đổ cho ngầu */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15); 
 }
 .info-box h1 { color: #ff85a2; font-size: 36px; margin-top: 0; }
 .tag { background: #ffe4e1; color: #ff5277; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 14px; }
