@@ -44,6 +44,7 @@
                     <div class="cinema-tools">
                         <span style="font-weight: bold; color: #888;">MHEnt. - Hệ thống:</span>
                         <button class="tool-btn" onclick="toggleDarkMode()">💡 Tắt đèn</button>
+                        <button id="btn-dark-mode" class="tool-btn" onclick="toggleDarkMode()">💡 Tắt đèn</button>
                     </div>
             </div> </div>
 
@@ -144,16 +145,38 @@
         renderButtons();
         playVideo(0); // Gọi trực tiếp tập 0 (Tập 1) cực an toàn
 
-        // Tính năng Back to Top
+        function toggleDarkMode() { 
+            // Tắt / Bật giao diện tối
+            document.body.classList.toggle('dark-mode'); 
+            
+            // Tìm cái nút
+            const btnDarkMode = document.getElementById('btn-dark-mode');
+            
+            // Kiểm tra: Nếu web đang màu đen thì đổi chữ thành "Bật đèn" và ngược lại
+            if (document.body.classList.contains('dark-mode')) {
+                btnDarkMode.innerText = "💡 Bật đèn";
+            } else {
+                btnDarkMode.innerText = "💡 Tắt đèn";
+            }
+        }
+
+        // Tính năng Back to Top (Phiên bản chống lỗi)
         const backToTopBtn = document.getElementById("btn-back-to-top");
-        window.addEventListener("scroll", () => {
-            // Nếu kéo xuống quá 300px thì hiện nút, ngược lại thì giấu
-            if (window.scrollY > 300) backToTopBtn.style.display = "block";
-            else backToTopBtn.style.display = "none";
-        });
-        backToTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" }); // Cuộn mượt mà lên đỉnh
-        });
+
+        if (backToTopBtn) { // Kiểm tra xem nút có tồn tại trên trang không
+            window.addEventListener("scroll", () => {
+                // Dùng cả 2 cách đo thanh cuộn cho chắc ăn
+                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                    backToTopBtn.style.display = "block";
+                } else {
+                    backToTopBtn.style.display = "none";
+                }
+            });
+
+            backToTopBtn.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        }
     </script>
 </body>
 </html>

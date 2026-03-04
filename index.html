@@ -72,16 +72,23 @@
     </footer>
 
     <script>
-            // Tính năng Back to Top
+        // Tính năng Back to Top (Phiên bản chống lỗi)
         const backToTopBtn = document.getElementById("btn-back-to-top");
-        window.addEventListener("scroll", () => {
-            // Nếu kéo xuống quá 300px thì hiện nút, ngược lại thì giấu
-            if (window.scrollY > 300) backToTopBtn.style.display = "block";
-            else backToTopBtn.style.display = "none";
-        });
-        backToTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" }); // Cuộn mượt mà lên đỉnh
-        });
+
+        if (backToTopBtn) { // Kiểm tra xem nút có tồn tại trên trang không
+            window.addEventListener("scroll", () => {
+                // Dùng cả 2 cách đo thanh cuộn cho chắc ăn
+                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                    backToTopBtn.style.display = "block";
+                } else {
+                    backToTopBtn.style.display = "none";
+                }
+            });
+
+            backToTopBtn.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        }
     </script>
 
 </body>
