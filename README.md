@@ -4,7 +4,7 @@
 ![MHEnt Banner](assets/banner-web.png)
 
 ## 🌟 Về dự án
-Đây là trang web chính thức để lưu trữ và trình chiếu các bản vietsub thuộc vũ trụ **Pretty Cure** và **Kamen Rider** do team MHEnt. thực hiện. Dự án được lập ra hoàn toàn vì đam mê, phi lợi nhuận và dành cho cộng đồng fan tại Việt Nam.
+Đây là trang web chính thức để lưu trữ và trình chiếu các bản vietsub thuộc vũ trụ **Pretty Cure** do team MHEnt. thực hiện. Dự án được lập ra hoàn toàn vì đam mê, phi lợi nhuận và dành cho cộng đồng fan tại Việt Nam.
 
 ## 🚀 Các dự án đang chạy
 * 🎀 **Star Detective Pretty Cure!** (Series)

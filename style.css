@@ -583,21 +583,23 @@ body.dark-mode .footer-link:hover { color: #fff; }
 
     /* 8. ÉP CÂN TOÀN DIỆN KHỐI DANH SÁCH TẬP */
     .episode-sidebar {
-        padding: 12px 15px; /* Rút gọn lớp đệm của cái hộp trắng xung quanh */
-        border-radius: 12px; /* Bo góc nhỏ lại cho đỡ cồng kềnh */
+        height: fit-content; /* <-- CHÍNH LÀ LỆNH NÀY! Ép hộp trắng ôm sát sạt vào nút, không cho dài ra nữa */
+        padding: 15px !important; /* Ép padding nhỏ lại */
+        border-radius: 12px;
     }
     .episode-sidebar h3 {
-        font-size: 16px; /* Thu nhỏ tiêu đề */
+        font-size: 16px;
         margin-top: 0;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        text-align: center; /* Tiện tay canh giữa cái chữ "Danh sách tập" cho đẹp luôn */
     }
     .ep-grid-v2 {
-        grid-template-columns: repeat(auto-fill, minmax(45px, 1fr)); /* Cho nút gọn lại nữa */
-        gap: 8px; /* Thu hẹp khoảng cách giữa các nút */
+        grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+        gap: 10px;
     }
     .ep-btn-custom {
-        padding: 6px 2px; /* Bóp mỏng cái nút lại */
-        font-size: 11px;  /* Chữ nhỏ xíu xiu vừa mắt điện thoại */
-        border-radius: 6px;
+        padding: 6px 2px;
+        font-size: 12px;
+        border-radius: 8px;
     }
 }
