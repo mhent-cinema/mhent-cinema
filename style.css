@@ -1,3 +1,7 @@
+/* =========================================
+   LANDING PAGE
+   ========================================= */
+
 /* --- THIẾT LẬP CHUNG --- */
 body {
     font-family: 'Nunito', sans-serif;
@@ -226,3 +230,32 @@ footer {
 .modal-content { background: #000; padding: 10px; border-radius: 10px; position: relative; width: 800px; max-width: 90%; }
 .modal-content iframe { width: 100%; aspect-ratio: 16/9; border: none; }
 .close-btn { position: absolute; top: -40px; right: 0; color: white; font-size: 30px; cursor: pointer; font-weight: bold; }
+
+/* =========================================
+   GIAO DIỆN TRANG XEM PHIM (WATCH PAGE)
+   ========================================= */
+
+/* Layout chia đôi Video và Sidebar */
+.watch-layout { display: flex; gap: 20px; margin-bottom: 40px; }
+.video-section { flex: 3; }
+.episode-sidebar { flex: 1; background: #fff; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+
+/* Danh sách tập dạng lưới vuông nhỏ */
+.ep-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); gap: 10px; margin-top: 15px; }
+.ep-btn-small { width: 40px; height: 40px; border: 1px solid #ddd; background: #fff; border-radius: 8px; cursor: pointer; font-weight: bold; }
+.ep-btn-small.active { background: #ff85a2; color: #fff; border-color: #ff85a2; }
+
+/* Phần thông tin phim tối giản bên dưới */
+.separator { border: 0; border-top: 2px solid #eee; margin: 40px 0; }
+.simple-details { display: flex; gap: 30px; align-items: flex-start; }
+.poster-small { width: 180px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.info-text h1 { margin-top: 0; color: #333; font-size: 28px; }
+
+/* Nút tắt đèn */
+.cinema-tools { margin-top: 15px; font-weight: bold; color: #666; }
+.tool-btn { margin-left: 10px; padding: 5px 15px; border-radius: 20px; border: 1px solid #ff85a2; background: none; color: #ff85a2; cursor: pointer; }
+
+/* Hiệu ứng tắt đèn */
+body.dark-mode { background-color: #1a1a1a; color: #eee; }
+body.dark-mode .episode-sidebar, body.dark-mode .navbar { background-color: #222; color: #fff; }
+body.dark-mode .info-text h1 { color: #ff85a2; }
