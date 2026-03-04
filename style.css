@@ -644,4 +644,8 @@ body.dark-mode .btn-back:hover { background: #ff85a2; color: #fff; }
             margin-top: 100px;
             margin-bottom: -10px;
         }
+
+    .details-container {
+        padding-top: 40px;
     }
+}
