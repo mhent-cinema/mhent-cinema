@@ -46,6 +46,12 @@ body {
     text-decoration: none;
 }
 
+.nav-links a {
+    text-decoration: none; /* <--- Thêm đúng dòng này để xóa gạch chân */
+    color: #555;
+    font-weight: 700;
+}
+
 .nav-left a {
     display: flex;
     align-items: center;
