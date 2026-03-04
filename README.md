@@ -1,27 +1,22 @@
-# 🎬 MHEnt Cinema - Nơi Hội Tụ Đam Mê
+# 🎬 MHEnt. - Cinema
+**Hệ thống rạp chiếu phim phi lợi nhuận của Miyazaki Haruto Entertainment Co., Ltd.**
 
-Chào mừng bạn đến với "rạp chiếu phim" trực tuyến của **Miyazaki Haruto Entertainment Co., Ltd.**! 🌟 
+![MHEnt Banner](assets/banner-web.png)
 
-Đây là trung tâm lưu trữ và phát sóng chính thức các dự án vietsub, phim ảnh và các sản phẩm giải trí tâm huyết do studio thực hiện. Chuẩn bị bắp nước và thưởng thức thôi nào!
+## 🌟 Về dự án
+Đây là trang web chính thức để lưu trữ và trình chiếu các bản vietsub thuộc vũ trụ **Pretty Cure** và **Kamen Rider** do team MHEnt. thực hiện. Dự án được lập ra hoàn toàn vì đam mê, phi lợi nhuận và dành cho cộng đồng fan tại Việt Nam.
 
-## 🍿 Phim Đang Chiếu (Now Showing)
-*(Click vào tên phim để đến trang xem trực tiếp)*
+## 🚀 Các dự án đang chạy
+* 🎀 **Star Detective Pretty Cure!** (Series)
+* 🎤 **Eiga Kimi to Idol Pretty Cure♪** (Movie)
 
-* ✨ **[Star Detective Pretty Cure!](./releases/star-detective-precure.md)** - [Đang cập nhật...]
-* 🤫 *(Các siêu phẩm tiếp theo đang được ấp ủ, hãy chờ nhé!)*
+## 🛠️ Công nghệ sử dụng
+* HTML5 / CSS3 / Vanilla JavaScript
+* Hosted by GitHub Pages
 
-## 🎥 Trải nghiệm xem phim mượt mà
-Để vượt qua giới hạn dung lượng và mang lại chất lượng video sắc nét nhất, toàn bộ phim của MHEnt được phát qua hệ thống máy chủ `ok.ru`. Bạn không cần tải về, chỉ cần chọn tập và xem trực tiếp ngay trên trang web này!
-
-## 📚 Góc Hậu Trường (Dành cho người tò mò)
-Trang web này không chỉ để xem phim! Nếu bạn muốn tìm hiểu cách chúng tớ làm ra một tập vietsub, hãy ghé thăm các góc nhỏ sau:
-* 📁 **[Kho Phụ Đề](./src):** Nơi lưu trữ các file text dịch thuật và hiệu ứng.
-* 📖 **[Tài Liệu Dịch Thuật](./docs):** Từ điển thuật ngữ chuyên dụng của team.
-* 🔔 **[Lịch Phát Sóng](./CHANGELOG.md):** Xem tiến độ làm sub và lịch ra mắt tập mới.
-
-## 💌 Về Chúng Tớ
-MHEnt được lập ra bởi đam mê mãnh liệt với văn hóa 2D. 
-* **Sáng lập & Điều hành:** Lam Chi
+## 🌐 Liên hệ
+* [Fanpage Chính Thức](https://www.facebook.com/mharuto.entertainment/)
+* [Rạp Phim Trên Facebook](https://www.facebook.com/groups/mhent.cinema)
 
 ---
-*Cảm ơn bạn đã ủng hộ! Dự án hoàn toàn phi lợi nhuận. Vui lòng không re-up video dưới mọi hình thức.*
+©2026 Miyazaki Haruto Entertainment Co., Ltd.
