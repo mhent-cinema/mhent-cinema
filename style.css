@@ -387,6 +387,10 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
+    display: inline-block;
+    max-width: 300px; /* hoặc giá trị phù hợp */
+    width: auto;
+    white-space: nowrap;
 }
 
 .btn-back:hover {
