@@ -96,6 +96,13 @@
             iframe.src = linkGoc; 
         }
 
+        // 🛑 BÙA CHÚ CẤM TRÌNH DUYỆT TỰ ĐỘNG CUỘN TRANG
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual'; // Tắt tính năng tự cuộn của Chrome
+        }
+        // Ép trang web luôn bắt đầu từ tọa độ (0, 0) - Tức là trên cùng màn hình
+        window.scrollTo(0, 0);
+
         document.addEventListener("DOMContentLoaded", function() {
             // Dùng đúng cái chìa khóa cậu đã tạo bên watch.html
             let lastEpIndex = localStorage.getItem('mhent_meitantei_precure_last_ep');

@@ -19,6 +19,13 @@
         <a onclick="window.location.href='/mhent-cinema/index.html'" style="cursor: pointer;" class="btn-home">⬅ Về lại Trang Chủ</a>
 
         <script>
+            // 🛑 BÙA CHÚ CẤM TRÌNH DUYỆT TỰ ĐỘNG CUỘN TRANG
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual'; // Tắt tính năng tự cuộn của Chrome
+            }
+            // Ép trang web luôn bắt đầu từ tọa độ (0, 0) - Tức là trên cùng màn hình
+            window.scrollTo(0, 0);
+            
             // Chặn F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
             document.addEventListener('keydown', function(e) {
             if (
