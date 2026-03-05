@@ -310,37 +310,52 @@ body {
     display: flex; 
     gap: 15px; 
     margin-top: 30px; 
+    flex-wrap: wrap; /* MA THUẬT 1: Hết chỗ thì tự nhảy xuống hàng, không ép dẹp nút */
 }
 
+/* Định dạng chung cho cả 3 nút để bằng vai phải lứa */
+.btn-watch, .btn-trailer, .btn-continue {
+    padding: 12px 25px; 
+    border-radius: 10px; /* Giữ nguyên bo góc 10px của cậu */
+    font-weight: bold; 
+    transition: 0.2s; 
+    text-decoration: none;
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center;
+    white-space: nowrap; /* MA THUẬT 2: Cấm tuyệt đối chữ rớt xuống 2 dòng */
+    border: none;
+    cursor: pointer;
+}
+
+/* Màu nút 1 */
 .btn-watch { 
     background: #ff85a2; 
     color: white; 
-    padding: 12px 25px; 
-    text-decoration: none; 
-    border-radius: 10px; 
-    font-weight: bold; 
-    transition: 0.2s; 
 }
-
 .btn-watch:hover { 
     background: #ff5277; 
     transform: translateY(-3px); 
 }
 
+/* Màu nút 2 */
 .btn-trailer { 
     background: #333; 
     color: white; 
-    padding: 12px 25px; 
-    border: none; 
-    border-radius: 10px; 
-    font-weight: bold; 
-    cursor: pointer; 
-    transition: 0.2s; 
 }
-
 .btn-trailer:hover { 
     background: #000; 
     transform: translateY(-3px); 
+}
+
+/* Màu nút 3 (Mới thêm) */
+.btn-continue {
+    background: #ff9a55; /* Màu cam nổi bật */
+    color: white;
+}
+.btn-continue:hover {
+    background: #e8833e;
+    transform: translateY(-3px);
 }
 
 /* Popup Trailer */
