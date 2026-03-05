@@ -368,6 +368,32 @@ body {
 /* =========================================
    4. TRANG XEM PHIM (WATCH PAGE)
    ========================================= */
+.back-navigation {
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn-back {
+    background-color: rgba(255, 255, 255, 0.8); /* Nền trắng trong suốt nhẹ */
+    color: #ff85a2; /* Màu hồng thương hiệu MHEnt. */
+    border: 2px solid #ff85a2;
+    padding: 8px 20px;
+    border-radius: 50px; /* Bo tròn cực mạnh */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-back:hover {
+    background-color: #ff85a2;
+    color: white;
+    transform: translateX(-5px); /* Hiệu ứng nhích nhẹ sang trái khi hover */
+}
+
 .watch-container {
     max-width: 1350px;
     margin: 100px auto 50px;
