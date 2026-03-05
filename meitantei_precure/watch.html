@@ -51,7 +51,8 @@
                         <div class="server-list-mini">
                             <span class="server-label">Nguồn phát:</span>
                             <button id="btn-server-vip" class="server-btn-mini active" onclick="changeServer('linkVIP')">✨ VIP (Nhanh)</button>
-                            <button id="btn-server-dp" class="server-btn-mini" onclick="changeServer('linkDuPhong')">🛡️ Archive (Dự phòng)</button>
+                            <button id="btn-server-dp" class="server-btn-mini" onclick="changeServer('linkDuPhong')">📺 Archive (Dự phòng)</button>
+                            <button id="btn-server-dp2" class="server-btn-mini" onclick="changeServer('linkDuPhong2')">🛡️ Vk (Dự phòng)</button>
                         </div>
                     </div>
                 </div> 
@@ -106,29 +107,34 @@
         const dsTapPhim = [
             { 
                 title: 'Tập 1: Mở màn! Star Detective Pretty Cure!',
-                linkVIP: 'https://drive.google.com/file/d/1WEXnphHSLvnZk3Wf_t4L7zQOmtwbak1S/preview', 
-                linkDuPhong: 'https://archive.org/embed/sdpc-ep1' 
+                linkVIP: 'https://drive.google.com/file/d/1OFWbew7CJp9-7VMhbSD80G2V7_IHtiLB/preview', 
+                linkDuPhong: 'https://archive.org/embed/sdpc-ep1',
+                linkDuPhong2: 'https://vkvideo.ru/video_ext.php?oid=-236401974&id=456239018&hash=5c06b86b9bad70e8&hd=4',
             },
             { 
                 title: 'Tập 2: Thiên tài đã xuất hiện! Người đó chính là Jett-senpai!',
-                linkVIP: 'https://drive.google.com/file/d/1HnT3g45YkPk40On9zRMi4aPHNanX-d-i/preview', 
-                linkDuPhong: 'https://archive.org/embed/sdpc-ep-2' 
+                linkVIP: 'https://drive.google.com/file/d/1XHuQ04tAvJF5a8-TEWrLWbYp4mTu7M1V/preview', 
+                linkDuPhong: 'https://archive.org/embed/sdpc-ep-2',
+                linkDuPhong2: 'https://vkvideo.ru/video_ext.php?oid=-236401974&id=456239019&hash=9f4bc74e066a6768&hd=4',
             },
             { 
                 title: 'Tập 3: Mọi người hãy cùng đến Văn phòng Thám Tử Kyuatto nhé!',
-                linkVIP: 'https://drive.google.com/file/d/1ziBj283mVEt1k1C5A_w4g2Qmx5690-dd/preview', 
-                linkDuPhong: 'ttps://archive.org/embed/sdpc-ep-3' 
+                linkVIP: 'https://drive.google.com/file/d/1QcTrbLSWqBUzcntx4kAHHi5f5m_zs7d1/preview', 
+                linkDuPhong: 'https://archive.org/embed/sdpc-ep-3',
+                linkDuPhong2: 'https://vkvideo.ru/video_ext.php?oid=-236401974&id=456239021&hash=282f515824bff245&hd=4',
             },
             { 
                 title: 'Tập 4: Hồi hộp quá đi! Vụ uỷ thác đầu tiên!',
-                linkVIP: 'https://drive.google.com/file/d/158P0bldnm8dduy3mvXO3_lnMdkHHSDGW/preview', 
-                linkDuPhong: 'https://ok.ru/videoembed/12502018427495?nochat=1' 
+                linkVIP: 'https://drive.google.com/file/d/16LBNy_hqQnqA_dt0bwXOEDkfUz4kqCDF/preview', 
+                linkDuPhong: 'https://archive.org/embed/sdpc-ep-4',
+                linkDuPhong2: 'https://vkvideo.ru/video_ext.php?oid=-236401974&id=456239022&hash=455c1c47ea9e2936&hd=4',
             },
             { 
                 title: 'Tập 5: Các Thám Tử Lừng Danh gặp rắc rối rồi!',
-                linkVIP: 'https://drive.google.com/file/d/14ykh87A6TmYJYC7hM929p8rfDN0U8Yfj/preview', 
-                linkDuPhong: 'https://ok.ru/videoembed/12502022359655?nochat=1' 
-            }
+                linkVIP: 'https://drive.google.com/file/d/1RANsXCwCKOgllke0Gtw_Ct5L3Jb1EUmO/preview', 
+                linkDuPhong: 'https://archive.org/embed/sdpc-ep-5',
+                linkDuPhong2: 'https://vkvideo.ru/video_ext.php?oid=-236401974&id=456239023&hash=604a74465070df18&hd=4',
+            },
         ];
 
         const movieName = "Star Detective Pretty Cure!";
@@ -179,11 +185,14 @@
             
             document.getElementById('btn-server-vip').classList.remove('active');
             document.getElementById('btn-server-dp').classList.remove('active');
+            document.getElementById('btn-server-dp2').classList.remove('active');
             
             if (serverType === 'linkVIP') {
                 document.getElementById('btn-server-vip').classList.add('active');
-            } else {
+            } else if (serverType === 'linkDuPhong') {
                 document.getElementById('btn-server-dp').classList.add('active');
+            } else if (serverType === 'linkDuPhong2') {
+                document.getElementById('btn-server-dp2').classList.add('active');
             }
 
             overlay.style.display = 'flex';
