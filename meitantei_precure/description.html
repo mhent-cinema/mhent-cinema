@@ -50,9 +50,9 @@
             </p>
             
             <div class="btn-group">
-                <a onclick="window.location.href='watch.html'" style="cursor: pointer;" class="btn-watch">▶ Vào Rạp Xem Phim</a>
+                <a id="btn-watch-main" onclick="playFromBeginning()" class="btn-watch" style="cursor: pointer;">▶ Vào Rạp Xem Phim</a>
+                <a id="btn-continue-watch" onclick="window.location.href='watch.html'" class="btn-continue" style="display: none; cursor: pointer;">▶ Xem tiếp phim</a>
                 <button class="btn-trailer" onclick="document.getElementById('trailerModal').style.display='flex'">🎬 Xem Trailer</button>
-                <a id="btn-play-movie" onclick="window.location.href='watch.html'" class="btn-continue" style="display: none; cursor: pointer;">▶ Xem tiếp phim</a>
             </div>
         </div>
     </div>
@@ -103,22 +103,29 @@
         // Ép trang web luôn bắt đầu từ tọa độ (0, 0) - Tức là trên cùng màn hình
         window.scrollTo(0, 0);
 
+        // Xoá dữ liệu đã xem để xem từ đầu
+        function playFromBeginning() {
+            // Ghi đè trí nhớ về Tập 1 (index 0) rồi mới chuyển trang
+            localStorage.setItem('mhent_meitantei_precure_last_ep', 0);
+            window.location.href = 'watch.html';
+        }
+
+        // Logic mở nút bấm
         document.addEventListener("DOMContentLoaded", function() {
-            // Dùng đúng cái chìa khóa cậu đã tạo bên watch.html
             let lastEpIndex = localStorage.getItem('mhent_meitantei_precure_last_ep');
             
-            // Nếu tìm thấy trí nhớ (không phải null)
+            // Nếu đã từng xem (không phải null)
             if (lastEpIndex !== null) {
-                let playBtn = document.getElementById('btn-play-movie');
-                
-                // Giải mã tư duy IT: Vì index của mảng bắt đầu từ 0 (Tập 1 là 0), nên số tập = index + 1
                 let epNumber = parseInt(lastEpIndex) + 1; 
                 
-                // 1. Chỉ cần đổi chữ thành số tập đang xem dở
-                playBtn.innerHTML = '▶ Xem tiếp Tập ' + epNumber;
+                // 1. Đổi chữ nút Hồng
+                let mainBtn = document.getElementById('btn-watch-main');
+                mainBtn.innerHTML = '▶ Xem từ đầu';
                 
-                // 2. MA THUẬT NẰM Ở ĐÂY: Bắt cái nút "hiện hình" lên!
-                playBtn.style.display = 'inline-flex'; 
+                // 2. Triệu hồi nút Cam và ghi số tập
+                let continueBtn = document.getElementById('btn-continue-watch');
+                continueBtn.innerHTML = '▶ Tiếp tục xem Tập ' + epNumber;
+                continueBtn.style.display = 'inline-flex'; 
             }
         });
 

@@ -53,7 +53,6 @@
             <div class="btn-group">
                 <a onclick="window.location.href='watch.html'" style="cursor: pointer;" class="btn-watch">▶ Vào Rạp Xem Phim</a>
                 <button class="btn-trailer" onclick="document.getElementById('trailerModal').style.display='flex'">🎬 Xem Trailer</button>
-                <a id="btn-play-movie" onclick="window.location.href='watch.html'" class="btn-continue" style="display: none; cursor: pointer;">▶ Xem tiếp phim</a>
             </div>
         </div>
     </div>
@@ -112,25 +111,6 @@
                 closeTrailer();
             }
         }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            // Dùng đúng cái chìa khóa cậu đã tạo bên watch.html
-            let lastEpIndex = localStorage.getItem('mhent_eiga_kimi_to_idol_precure_last_ep');
-            
-            // Nếu tìm thấy trí nhớ (không phải null)
-            if (lastEpIndex !== null) {
-                let playBtn = document.getElementById('btn-play-movie');
-                
-                // Giải mã tư duy IT: Vì index của mảng bắt đầu từ 0 (Tập 1 là 0), nên số tập = index + 1
-                let epNumber = parseInt(lastEpIndex) + 1; 
-                
-                // 1. Chỉ cần đổi chữ thành số tập đang xem dở
-                playBtn.innerHTML = '▶ Xem tiếp Tập ' + epNumber;
-                
-                // 2. MA THUẬT NẰM Ở ĐÂY: Bắt cái nút "hiện hình" lên!
-                playBtn.style.display = 'inline-flex'; 
-            }
-        });
 
         // Tính năng Back to Top (Phiên bản chống lỗi)
         const backToTopBtn = document.getElementById("btn-back-to-top");

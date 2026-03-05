@@ -56,7 +56,7 @@
                         <div class="server-list-mini">
                             <span class="server-label">Nguồn phát:</span>
                             <button id="btn-server-vip" class="server-btn-mini active" onclick="changeServer('linkVIP')">✨ VIP (Nhanh)</button>
-                            <!-- <button id="btn-server-dp" class="server-btn-mini" onclick="changeServer('linkDuPhong')">🛡️ Archive (Dự phòng)</button> -->
+                            <button id="btn-server-dp" class="server-btn-mini" onclick="changeServer('linkDuPhong')">🛡️ Archive (Dự phòng)</button>
                         </div>
                     </div>
                 </div> 
@@ -141,9 +141,6 @@
         function playVideo(index) {
             currentEpIndex = index;
             
-            // LƯU TRÍ NHỚ: Ghi lại tập đang xem vào bộ nhớ của trình duyệt
-            localStorage.setItem('mhent_eiga_kimi_to_idol_precure_last_ep', index);
-
             overlay.style.display = 'flex'; 
             
             setTimeout(() => {
@@ -201,17 +198,9 @@
             }
         }
 
-        // TỰ ĐỘNG KHÔI PHỤC TRÍ NHỚ KHI VÀO WEB
+        // TỰ ĐỘNG PHÁT PHIM LẺ KHI VÀO WEB
         renderButtons();
-        let savedEp = localStorage.getItem('mhent_eiga_kimi_to_idol_precure_last_ep');
-        let startEp = savedEp !== null ? parseInt(savedEp) : 0; // Nếu chưa xem bao giờ thì phát tập 1 (index 0)
-        
-        // Đề phòng trường hợp cậu xóa bớt tập phim
-        if (startEp >= dsTapPhim.length || startEp < 0) {
-            startEp = 0;
-        }
-        
-        playVideo(startEp); 
+        playVideo(0); // Luôn luôn phát thẳng Tập Full (index 0) không cần suy nghĩ!
 
         // Back to top
         const backToTopBtn = document.getElementById("btn-back-to-top");
