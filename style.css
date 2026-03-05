@@ -94,6 +94,7 @@ body {
     background: linear-gradient(135deg, #e0f7fa 0%, #ffe4e1 100%);
     padding: 80px 20px;
     text-align: center;
+    gap: 15px; /* Khoảng cách tự động giữa H1, P và Button */
 }
 
 .hero h1 {
@@ -109,6 +110,8 @@ body {
     font-style: italic;
     color: #555; /* Làm màu chữ xám đậm một chút để dễ đọc trên nền sáng */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); /* Hiệu ứng nổi chữ nhẹ nhàng */
+    margin-bottom: 30px; /* Đẩy cái nút xuống dưới 30px */
+    display: block;      /* Đảm bảo nó chiếm trọn một hàng riêng */
 }
 
 .btn-primary {
@@ -121,6 +124,9 @@ body {
     font-size: 18px;
     box-shadow: 0 5px 15px rgba(255, 133, 162, 0.4);
     transition: transform 0.2s;
+}
+.btn-primary:hover {
+    transform: translateY(-5px);
 }
 
 .movie-section {
