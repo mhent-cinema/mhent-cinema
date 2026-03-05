@@ -83,6 +83,10 @@ body {
     color: #ff85a2;
 }
 
+.gradient-bg {
+  background: linear-gradient(135deg, #e0f7fa 0%, #ffe4e1 100%);
+}
+
 /* =========================================
    2. TRANG CHỦ (LANDING PAGE)
    ========================================= */
@@ -312,6 +316,14 @@ body {
 .description-scroll { max-height: 100px; overflow: hidden; transition: max-height 0.5s ease; line-height: 1.6; }
 .description-scroll.expanded { max-height: 1000px; }
 .btn-read-more { margin-top: 10px; background: none; border: none; color: #ff85a2; font-weight: bold; cursor: pointer; padding: 0; }
+
+.desc-block {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  padding: 25px;
+  margin-top: 30px;
+}
 
 /* Hiệu ứng Loading */
 .loading-overlay {
