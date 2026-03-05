@@ -26,6 +26,18 @@ body {
     padding-top: 80px;
     background-color: #f8fbff;
     color: #333;
+    animation: fadeInPage 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(15px); /* Khởi đầu hơi chìm xuống 15px */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Nổi lên vị trí ban đầu */
+    }
 }
 
 .navbar {
