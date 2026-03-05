@@ -52,6 +52,7 @@
             <div class="btn-group">
                 <a onclick="window.location.href='watch.html'" style="cursor: pointer;" class="btn-watch">▶ Vào Rạp Xem Phim</a>
                 <button class="btn-trailer" onclick="document.getElementById('trailerModal').style.display='flex'">🎬 Xem Trailer</button>
+                <a id="btn-play-movie" onclick="window.location.href='watch.html'" class="btn-primary" style="cursor: pointer;">▶ Xem tiếp phim</a>
             </div>
         </div>
     </div>
@@ -94,6 +95,25 @@
             // Khi đóng: Xóa sạch link (về trang trắng hoàn toàn) để dừng mọi âm thanh
             iframe.src = linkGoc; 
         }
+
+        document.addEventListener("DOMContentLoaded", function() {
+        // Dùng đúng cái chìa khóa cậu đã tạo bên watch.html
+        let lastEpIndex = localStorage.getItem('mhent_meitantei_precure_last_ep');
+        
+        // Nếu tìm thấy trí nhớ (không phải null)
+        if (lastEpIndex !== null) {
+            let playBtn = document.getElementById('btn-play-movie');
+            
+            // Giải mã tư duy IT: Vì index của mảng bắt đầu từ 0 (Tập 1 là 0), nên số tập = index + 1
+            let epNumber = parseInt(lastEpIndex) + 1; 
+            
+            // Đổi chữ và "sơn" lại màu nút cho nổi bật
+            playBtn.innerHTML = '▶ Tiếp tục xem Tập ' + epNumber;
+            playBtn.style.backgroundColor = '#ff9a55'; /* Đổi màu cam nhạt */
+            playBtn.style.borderColor = '#ff9a55';
+            playBtn.style.boxShadow = '0 5px 15px rgba(255, 154, 85, 0.4)';
+        }
+        });
 
         // TÍNH NĂNG 1: Bấm phím ESC để đóng
         document.addEventListener('keydown', function(event) {
