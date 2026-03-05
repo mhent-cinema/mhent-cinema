@@ -369,7 +369,7 @@ body {
    4. TRANG XEM PHIM (WATCH PAGE)
    ========================================= */
 .back-navigation {
-    margin: 20px 0;
+    margin: 0 0 15px 0; /* Giảm margin dưới xuống còn 15px để nút sát vào video */
     display: flex;
     justify-content: flex-start;
 }
@@ -396,7 +396,7 @@ body {
 
 .watch-container {
     max-width: 1350px;
-    margin: 100px auto 50px;
+    margin: 80px auto 50px;
     padding: 0 40px;
 }
 
