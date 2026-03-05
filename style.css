@@ -309,21 +309,19 @@ body {
 
 /* Thông tin dưới gầm Watch Page */
 .separator-full { border: 0; border-top: 2px solid #eee; margin: 40px 0; }
-.info-footer-container { display: flex; gap: 30px; align-items: flex-start; }
+.info-footer-container { display: flex; gap: 20px; margin-top: 20px; align-items: flex-start; }
 .poster-watch-fix { width: 200px; height: auto; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-.info-content-box { flex: 1; }
+.info-content-box {
+    background-color: #ffffff; /* Nền trắng tinh khôi */
+    padding: 25px; /* Khoảng cách từ chữ ra lề khung */
+    border-radius: 15px; /* Bo góc tròn trịa kẹo ngọt */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Đổ bóng mờ cho khung nổi lên */
+    flex: 1; /* Để nó tự động giãn chiếm hết khoảng trống bên phải poster */
+}
 
 .description-scroll { max-height: 100px; overflow: hidden; transition: max-height 0.5s ease; line-height: 1.6; }
 .description-scroll.expanded { max-height: 1000px; }
 .btn-read-more { margin-top: 10px; background: none; border: none; color: #ff85a2; font-weight: bold; cursor: pointer; padding: 0; }
-
-.desc-block {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  padding: 25px;
-  margin-top: 30px;
-}
 
 /* Hiệu ứng Loading */
 .loading-overlay {
